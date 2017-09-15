@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>选街道</title>
+    <link rel="stylesheet" href="=../css/layout.css"/>
+    <style>
+    .myli{
+    cursor: pointer;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+    border: 1px solid #ddd;
+  
+
+    }
+    .myli:hover{
+    cursor: pointer;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+    border: 1px solid #2288ff;
+ 
+    }
+    </style>
+    
+</head>
+
+<body class="bg_grey">
+
+<!--顶部搜索 start-->
+<header class="header">
+    <div class="Topsearch">
+        <form id="formid" name="myform" method="get" action="search-result.html" onsubmit="location.href='search-result.html'">
+            <span class="searchinput"><input placeholder="请输入关键字" id="inputAreaName" type="text"></span>
+            <span class="Menu"><a href="#">取消</a></span>
+        </form>
+    </div>
+    <!--分类下拉展开 start-->
+    <div class="show">
+        <div class="showcon">
+            <ul>
+                <i class="icon iconJt"></i>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--分类下拉展开 end-->
+</header>
+<!--顶部搜索 end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="chooseBox">
+        <div class="location">
+            <span>您的位置：</span>
+            <span class="cur myli" _areaid="440100000000">广州市</span>
+        </div>
+           <div class="location">
+             <span>城市：</span>
+            <span class="cur myli " _areaid="440100000000">广州市</span>
+
+        </div> 
+        <div class="location" id="searchresult">
+            <span>搜索结果：</span>
+
+        </div>
+       
+        <div class="area">
+            <h3 class="hide1">荔湾区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440103001000">沙面街道</span></li>
+       
+                <li><span class="myli" _areaid="440103002000">岭南街道</span></li>
+       
+                <li><span class="myli" _areaid="440103003000">华林街道</span></li>
+       
+                <li><span class="myli" _areaid="440103004000">多宝街道</span></li>
+       
+                <li><span class="myli" _areaid="440103005000">昌华街道</span></li>
+       
+                <li><span class="myli" _areaid="440103006000">逢源街道</span></li>
+       
+                <li><span class="myli" _areaid="440103007000">龙津街道</span></li>
+       
+                <li><span class="myli" _areaid="440103008000">金花街道</span></li>
+       
+                <li><span class="myli" _areaid="440103009000">彩虹街道</span></li>
+       
+                <li><span class="myli" _areaid="440103010000">南源街道</span></li>
+       
+                <li><span class="myli" _areaid="440103011000">西村街道</span></li>
+       
+                <li><span class="myli" _areaid="440103012000">站前街道</span></li>
+       
+                <li><span class="myli" _areaid="440103013000">桥中街道</span></li>
+       
+                <li><span class="myli" _areaid="440103014000">白鹤洞街道</span></li>
+       
+                <li><span class="myli" _areaid="440103015000">冲口街道</span></li>
+       
+                <li><span class="myli" _areaid="440103016000">花地街道</span></li>
+       
+                <li><span class="myli" _areaid="440103017000">石围塘街道</span></li>
+       
+                <li><span class="myli" _areaid="440103018000">茶滘街道</span></li>
+       
+                <li><span class="myli" _areaid="440103019000">东漖街道</span></li>
+       
+                <li><span class="myli" _areaid="440103020000">海龙街道</span></li>
+       
+                <li><span class="myli" _areaid="440103021000">东沙街道</span></li>
+       
+                <li><span class="myli" _areaid="440103022000">中南街道</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">越秀区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440104001000">洪桥街道</span></li>
+       
+                <li><span class="myli" _areaid="440104003000">北京街道</span></li>
+       
+                <li><span class="myli" _areaid="440104004000">六榕街道</span></li>
+       
+                <li><span class="myli" _areaid="440104005000">流花街道</span></li>
+       
+                <li><span class="myli" _areaid="440104007000">光塔街道</span></li>
+       
+                <li><span class="myli" _areaid="440104010000">人民街道</span></li>
+       
+                <li><span class="myli" _areaid="440104011000">东山街道</span></li>
+       
+                <li><span class="myli" _areaid="440104012000">农林街道</span></li>
+       
+                <li><span class="myli" _areaid="440104013000">梅花村街道</span></li>
+       
+                <li><span class="myli" _areaid="440104014000">黄花岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440104015000">华乐街道</span></li>
+       
+                <li><span class="myli" _areaid="440104016000">建设街道</span></li>
+       
+                <li><span class="myli" _areaid="440104017000">大塘街道</span></li>
+       
+                <li><span class="myli" _areaid="440104018000">珠光街道</span></li>
+       
+                <li><span class="myli" _areaid="440104019000">大东街道</span></li>
+       
+                <li><span class="myli" _areaid="440104020000">白云街道</span></li>
+       
+                <li><span class="myli" _areaid="440104021000">登峰街道</span></li>
+       
+                <li><span class="myli" _areaid="440104022000">矿泉街道</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">海珠区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440105001000">赤岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440105002000">新港街道</span></li>
+       
+                <li><span class="myli" _areaid="440105003000">昌岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440105004000">江南中街道</span></li>
+       
+                <li><span class="myli" _areaid="440105005000">滨江街道</span></li>
+       
+                <li><span class="myli" _areaid="440105006000">素社街道</span></li>
+       
+                <li><span class="myli" _areaid="440105007000">海幢街道</span></li>
+       
+                <li><span class="myli" _areaid="440105008000">南华西街道</span></li>
+       
+                <li><span class="myli" _areaid="440105009000">龙凤街道</span></li>
+       
+                <li><span class="myli" _areaid="440105010000">沙园街道</span></li>
+       
+                <li><span class="myli" _areaid="440105011000">南石头街道</span></li>
+       
+                <li><span class="myli" _areaid="440105012000">凤阳街道</span></li>
+       
+                <li><span class="myli" _areaid="440105013000">瑞宝街道</span></li>
+       
+                <li><span class="myli" _areaid="440105014000">江海街道</span></li>
+       
+                <li><span class="myli" _areaid="440105015000">琶洲街道</span></li>
+       
+                <li><span class="myli" _areaid="440105016000">南洲街道</span></li>
+       
+                <li><span class="myli" _areaid="440105017000">华洲街道</span></li>
+       
+                <li><span class="myli" _areaid="440105018000">官洲街道</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">天河区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440106001000">五山街道</span></li>
+       
+                <li><span class="myli" _areaid="440106002000">员村街道</span></li>
+       
+                <li><span class="myli" _areaid="440106003000">车陂街道</span></li>
+       
+                <li><span class="myli" _areaid="440106004000">沙河街道</span></li>
+       
+                <li><span class="myli" _areaid="440106006000">石牌街道</span></li>
+       
+                <li><span class="myli" _areaid="440106007000">沙东街道</span></li>
+       
+                <li><span class="myli" _areaid="440106008000">天河南街道</span></li>
+       
+                <li><span class="myli" _areaid="440106009000">林和街道</span></li>
+       
+                <li><span class="myli" _areaid="440106010000">兴华街道</span></li>
+       
+                <li><span class="myli" _areaid="440106011000">棠下街道</span></li>
+       
+                <li><span class="myli" _areaid="440106012000">天园街道</span></li>
+       
+                <li><span class="myli" _areaid="440106013000">猎德街道</span></li>
+       
+                <li><span class="myli" _areaid="440106014000">冼村街道</span></li>
+       
+                <li><span class="myli" _areaid="440106015000">元岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440106016000">黄村街道</span></li>
+       
+                <li><span class="myli" _areaid="440106017000">长兴街道</span></li>
+       
+                <li><span class="myli" _areaid="440106018000">龙洞街道</span></li>
+       
+                <li><span class="myli" _areaid="440106019000">凤凰街道</span></li>
+       
+                <li><span class="myli" _areaid="440106020000">前进街道</span></li>
+       
+                <li><span class="myli" _areaid="440106021000">珠吉街道</span></li>
+       
+                <li><span class="myli" _areaid="440106022000">新塘街道</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">白云区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440111002000">三元里街道</span></li>
+       
+                <li><span class="myli" _areaid="440111003000">松洲街道</span></li>
+       
+                <li><span class="myli" _areaid="440111004000">景泰街道</span></li>
+       
+                <li><span class="myli" _areaid="440111005000">同德街道</span></li>
+       
+                <li><span class="myli" _areaid="440111006000">黄石街道</span></li>
+       
+                <li><span class="myli" _areaid="440111007000">棠景街道</span></li>
+       
+                <li><span class="myli" _areaid="440111008000">新市街道</span></li>
+       
+                <li><span class="myli" _areaid="440111009000">同和街道</span></li>
+       
+                <li><span class="myli" _areaid="440111010000">京溪街道</span></li>
+       
+                <li><span class="myli" _areaid="440111011000">永平街道</span></li>
+       
+                <li><span class="myli" _areaid="440111012000">嘉禾街道</span></li>
+       
+                <li><span class="myli" _areaid="440111013000">均禾街道</span></li>
+       
+                <li><span class="myli" _areaid="440111014000">石井街道</span></li>
+       
+                <li><span class="myli" _areaid="440111015000">金沙街道</span></li>
+       
+                <li><span class="myli" _areaid="440111016000">云城街道</span></li>
+       
+                <li><span class="myli" _areaid="440111017000">鹤龙街道</span></li>
+       
+                <li><span class="myli" _areaid="440111018000">白云湖街道</span></li>
+       
+                <li><span class="myli" _areaid="440111019000">石门街道</span></li>
+       
+                <li><span class="myli" _areaid="440111103000">人和镇</span></li>
+       
+                <li><span class="myli" _areaid="440111107000">太和镇</span></li>
+       
+                <li><span class="myli" _areaid="440111108000">钟落潭镇</span></li>
+       
+                <li><span class="myli" _areaid="440111113000">江高镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">黄埔区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440112001000">黄埔街道</span></li>
+       
+                <li><span class="myli" _areaid="440112002000">红山街道</span></li>
+       
+                <li><span class="myli" _areaid="440112003000">鱼珠街道</span></li>
+       
+                <li><span class="myli" _areaid="440112005000">大沙街道</span></li>
+       
+                <li><span class="myli" _areaid="440112006000">文冲街道</span></li>
+       
+                <li><span class="myli" _areaid="440112007000">穗东街道</span></li>
+       
+                <li><span class="myli" _areaid="440112008000">南岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440112009000">荔联街道</span></li>
+       
+                <li><span class="myli" _areaid="440112010000">长洲街道</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">番禺区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440113007000">市桥街道</span></li>
+       
+                <li><span class="myli" _areaid="440113008000">沙头街道</span></li>
+       
+                <li><span class="myli" _areaid="440113009000">东环街道</span></li>
+       
+                <li><span class="myli" _areaid="440113010000">桥南街道</span></li>
+       
+                <li><span class="myli" _areaid="440113011000">小谷围街道</span></li>
+       
+                <li><span class="myli" _areaid="440113012000">大石街道</span></li>
+       
+                <li><span class="myli" _areaid="440113013000">洛浦街道</span></li>
+       
+                <li><span class="myli" _areaid="440113014000">石壁街道</span></li>
+       
+                <li><span class="myli" _areaid="440113015000">钟村街道</span></li>
+       
+                <li><span class="myli" _areaid="440113016000">大龙街道</span></li>
+       
+                <li><span class="myli" _areaid="440113102000">南村镇</span></li>
+       
+                <li><span class="myli" _areaid="440113103000">新造镇</span></li>
+       
+                <li><span class="myli" _areaid="440113104000">化龙镇</span></li>
+       
+                <li><span class="myli" _areaid="440113105000">石楼镇</span></li>
+       
+                <li><span class="myli" _areaid="440113118000">沙湾镇</span></li>
+       
+                <li><span class="myli" _areaid="440113120000">石基镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">花都区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440114001000">新华街道办事处</span></li>
+       
+                <li><span class="myli" _areaid="440114002000">花城街道办事处</span></li>
+       
+                <li><span class="myli" _areaid="440114003000">秀全街道办事处</span></li>
+       
+                <li><span class="myli" _areaid="440114004000">新雅街道办事处</span></li>
+       
+                <li><span class="myli" _areaid="440114103000">梯面镇</span></li>
+       
+                <li><span class="myli" _areaid="440114104000">花山镇</span></li>
+       
+                <li><span class="myli" _areaid="440114105000">花东镇</span></li>
+       
+                <li><span class="myli" _areaid="440114107000">炭步镇</span></li>
+       
+                <li><span class="myli" _areaid="440114108000">赤坭镇</span></li>
+       
+                <li><span class="myli" _areaid="440114109000">狮岭镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">南沙区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440115001000">南沙街道</span></li>
+       
+                <li><span class="myli" _areaid="440115002000">珠江街道</span></li>
+       
+                <li><span class="myli" _areaid="440115003000">龙穴街道</span></li>
+       
+                <li><span class="myli" _areaid="440115100000">万顷沙镇</span></li>
+       
+                <li><span class="myli" _areaid="440115101000">横沥镇</span></li>
+       
+                <li><span class="myli" _areaid="440115102000">黄阁镇</span></li>
+       
+                <li><span class="myli" _areaid="440115103000">东涌镇</span></li>
+       
+                <li><span class="myli" _areaid="440115104000">大岗镇</span></li>
+       
+                <li><span class="myli" _areaid="440115105000">榄核镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">萝岗区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440116001000">夏港街道</span></li>
+       
+                <li><span class="myli" _areaid="440116002000">萝岗街道</span></li>
+       
+                <li><span class="myli" _areaid="440116003000">东区街道</span></li>
+       
+                <li><span class="myli" _areaid="440116004000">联和街道</span></li>
+       
+                <li><span class="myli" _areaid="440116005000">永和街道</span></li>
+       
+                <li><span class="myli" _areaid="440116101000">九龙镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">从化区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440117001000">街口街道</span></li>
+       
+                <li><span class="myli" _areaid="440117002000">江埔街道</span></li>
+       
+                <li><span class="myli" _areaid="440117003000">城郊街道</span></li>
+       
+                <li><span class="myli" _areaid="440117103000">温泉镇</span></li>
+       
+            </ul>
+        </div>
+        <div class="area">
+            <h3 class="hide1">增城区</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+                <li><span class="myli" _areaid="440118001000">荔城街道</span></li>
+       
+                <li><span class="myli" _areaid="440118002000">增江街道</span></li>
+       
+                <li><span class="myli" _areaid="440118003000">朱村街道</span></li>
+       
+                <li><span class="myli" _areaid="440118004000">永宁街道</span></li>
+       
+                <li><span class="myli" _areaid="440118101000">新塘镇</span></li>
+       
+                <li><span class="myli" _areaid="440118102000">石滩镇</span></li>
+       
+                <li><span class="myli" _areaid="440118103000">中新镇</span></li>
+       
+                <li><span class="myli" _areaid="440118104000">正果镇</span></li>
+       
+                <li><span class="myli" _areaid="440118105000">派潭镇</span></li>
+       
+                <li><span class="myli" _areaid="440118106000">小楼镇</span></li>
+       
+                <li><span class="myli" _areaid="440118107000">仙村镇</span></li>
+       
+            </ul>
+        </div>
+    </div>
+</section>
+<!--中间部分 end-->
+<br>
+<br>
+<br>
+<br>
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/common.js"></script>
+<script src="../html/news/choose.js"></script>
+
+
+</body></html>

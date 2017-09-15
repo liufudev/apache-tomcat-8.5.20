@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>活动详情-订单支付（收费）</title>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+</head>
+
+<body class="bg_grey flowlayout">
+<input type="hidden" name="enrollId" id="enrollId" value="${enrollId}">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="#"><i class="icon iconBackWhite"></i></a></span>
+        <h1>订单支付</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox">
+        <div class="orderBox">
+            <div class="order-tit">
+                <img src="${vo.picPath}" alt=""/>
+                <h3>${vo.title}</h3>
+            </div>
+           <#list vo.payList as pay>
+	            <div class="order-txt">
+	                <span>${pay.name}</span>
+	                <span>${pay.number}张：<strong>¥${pay.price/100}</strong></span>
+	            </div>
+			</#list>
+        </div>
+        <div class="orderBox mt10">
+            <p class="mod-title cor_blue">订票人</p>
+            <ul class="order-information">
+                <li>
+                    <span class="name">${vo.webUserName}</span>
+                    <span class="fr">${vo.phone}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="orderBox mt10">
+            <ul class="order-list">
+                <li>
+                    <p><span>退款条款</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="orderBox mt10">
+            <p class="mod-title cor_blue">支付方式</p>
+            <ul class="order-list">
+                <li class="nobg">
+                    <i class="icon icon_wecat"></i>
+                    <span>微信支付</span>
+                    <span class="check-basic checkboxFive fr">
+                    <input type="checkbox" value="1" id="checkboxFiveInput" checked="checked"  name=""/>
+                    <label for="checkboxFiveInput"></label>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<section class="activity-bottom">
+    <div class="activity-bottom-lf">
+        <div class="heji">
+            <p>合计：<strong class="cor_blue">¥${vo.total/100}</strong></p>
+        </div>
+    </div>
+    <div class="activity-bottom-rg">
+        <button class="button-act" onclick="goPay()">前往付款</button>
+    </div>
+</section>
+<!--底部固定评论 end-->
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script src="../../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../js/public.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="${path}/html/activity/activity-signup-pay-order-wx.js"></script>
+
+</body>
+</html>

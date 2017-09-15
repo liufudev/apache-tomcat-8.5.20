@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>活动</title>
+    <script src="../../js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+	<script src="../../js/public.js"></script>
+    	<#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+    	<script src="../../js/common.js"></script>
+    	<script src="activity.js"></script>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+    
+    <style>
+	  .quick li img {
+	    width: 50px !important;
+	    height: 50px !important;
+		}
+	</style>
+</head>
+
+<body class="bg_grey flowlayout">
+
+<!--<div class="servicebanner"></div>-->
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态一：-->
+        <span class="Location"><a href="javascript:void(0)" onclick="activity()"><em id="areaName"></em><i class="icon iconArrowBT"></i></a></span>
+        <span class="Menu"><a href="../../html/activity/search.html"><i class="icon iconSearchWhite"></i></a></span>
+        <h1 class="logo"><img src="../../img/logo/logo.png" alt=""/></h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+
+    <!--轮播图 start-->
+    <div class="slideBox" id="slideBox">
+        <div class="focus focus2">
+            <ul id="loop">
+            </ul>
+        </div>
+        <div class="dot">
+            <ul></ul>
+        </div>
+    </div>
+    <!--轮播图 end-->
+
+    <!--快捷入口 start-->
+    <div class="quickbox">
+        <ul class="quick" id="type">
+        </ul>
+
+    </div>
+    <!--快捷入口 end-->
+
+    <!--中间部分 start-->
+    <div class="main">
+        <div class="containerBox">
+
+            <!--公共标题 start-->
+            <div class="title ">
+                <em></em>
+                <a href="news/list.html"><strong>热门活动</strong></a>
+            </div>
+            <!--公共标题 end-->
+            <!--小图新闻列表 start-->
+            <ul class="Box" id="activityList">
+            </ul>
+            <!--小图新闻列表 end-->
+        </div>
+    </div>
+    <!--中间部分 end-->
+
+</section>
+<!--中间布局 end-->
+
+<!--footer start-->
+<#include "../footer.html">
+	<script>
+		$(function() {
+			$("#footer_ul_").children('li').eq(2).addClass('cur');
+	
+		})
+	</script>
+<!--footer end-->
+<script>
+    $(function () {
+        $('.focus li').hide();
+        $('.focus li').first().show();
+        $('.focus li').last().find('img').load(function () {
+            TouchSlide({
+                slideCell: "#slideBox",
+                titCell: ".dot ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                mainCell: ".focus ul",
+                effect: "leftLoop",
+                autoPage: true, //自动分页
+                autoPlay: true //自动播放
+            });
+            $('.focus li').show();
+        });
+    })
+</script>
+<style>
+    .slideBox .dot {
+        bottom: .06rem;
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title id="title"></title>
+    <#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+	<script src="${(path)!}/html/live/js/socket.io.js"></script>
+	<script src="${(path)!}/html/live/js/moment.min.js"></script>
+	<script src="${(path)!}/html/live/zhibo-detail.js?date=20170707"></script>
+	<script src="${(path)!}/html/live/zhibo-detail-show.js"></script>
+	<script src="${(path)!}/html/live/zhibo-detail-page.js"></script>
+	<script src="${(path)!}/html/live/js/jwplayer.js"></script> 
+	<script src="${(path)!}/html/live/js/jwplayer.flash.swf"></script>  
+	<script>jwplayer.key="iP+vLYU9H5KyhZeGt5eVuJJIoULUjltoaMeHXg==";</script>
+</head>
+
+<body class="flowlayout ">
+<input type="hidden" id="liveId" value="${(liveId)!}">
+<input type="hidden" id="userId" value="${(userId)!}">
+<input type="hidden" id="nickName" value="${(nickName)!}">
+<input type="hidden" id="headURL" value="${(headURL)!}">
+<input type="hidden" id="status" value="${(vmVideo.status)!}">
+<input type="hidden" id="videoTitle" value="${(vmVideo.videoTitle)!}">
+<input type="hidden" id="videoPath" value="${(vmVideo.videoPath)!}">
+<input type="hidden" id="mobileHPath" value="${(vmVideo.mobileHPath)!}">
+<input type="hidden" id="remindState" value="${(remindState?string('true','false'))!}">
+<input type="hidden" id="say">
+<!--中间部分 start-->
+<section class="main">
+    <div class="containerBox">
+        <div class="FixedC  ">
+            <!--播放 start-->
+            <div class="playBox show-pl">
+                <!--直播详情头部 start-->
+                <div class="playheader ">
+                    <div class="playheaderCon">
+                        <span class="Menu"><a href="#"><i class="icon iconNumber"></i> <i id="totalNumber"></i>人在看</a></span>
+                    </div>
+                </div>
+                <!--直播详情头部 end-->
+                <div class="onlive onlive2">
+                    <div id='myplayer' >
+                  	  <img alt="" src="${(vmVideo.backgroundPath)!}" id="myplayerPic">
+                    </div>
+                </div>
+            </div>
+            <!--播放 end-->
+
+            <!--切换 start-->
+            <div class="TabMenu_B">
+                <span class="icon icon_arrow_up hide-pl"></span>
+                <ul class="TabMenu">
+                    <li class="cur"><a href="#">直播</a></li>
+                    <li><a href="#">聊天</a></li>
+                </ul>
+
+            </div>
+            <!--切换 end-->
+
+        </div>
+
+        <!--详情 start-->
+        <div class="FixedCCon">
+            <div class="TabBlock">
+                <div class="m">
+                    <!--评论列表 start-->
+                    <div class="time-space"><span id="time"></span></div>
+                    <div class="introduce">
+		                	<div class="remindof" id="remind" style="display: none">
+		                        <p>——本次直播将于${vmVideo.startTime?string("yyyy-MM-dd HH:mm")}开始——</p>
+		                        <button onclick="openRemind(value)" value="open" id="openRemind">开启提醒</button>
+		                    </div>
+                        <ul id="introduce">
+                        	<input type="hidden" id="introduceStick">
+                        </ul>
+                    </div>
+                    <!--评论列表 end-->
+                </div>
+                <div class="m none">
+                    <!--评论列表 start-->
+                    <ul class="talk-talk" id="chat">
+                        	<input type="hidden" id="talkBoxShow">
+                    </ul>
+                    <!--评论列表 end-->
+                </div>
+            </div>
+        </div>
+        <!--详情 start-->
+
+    </div>
+</section>
+<!--中间部分 end-->
+
+
+<!--底部固定评论 start-->
+<section class="enterBox ">
+    <div class="enter">
+        <div class="enter-lf " id="sayTmp">
+            <input placeholder="聊天"  class="enterinput" readonly="true">
+        </div>
+        <div class="enter-rg ">
+             <ul class="entericon">
+               <li id="thumbsupNo" onclick="thumpUpAddOne();"><em>${(vmVideo.thumbUpNumber)!}</em><em id="thumbsupNum"></em><i class="icon iconLike" ></i></li>
+                <li id="thumbsupYes" style="display:none;"><em id="thumbsupNum2">${(vmVideo.thumbUpNumber)!}</em><i class="icon iconLike2" onclick="deleteThumbsUp();"></i></li>
+               <li id="collectNo"><i class="icon iconCollect" onclick="SaveCollect();"></i></li>
+                <li id="collectYes" style="display:none;"><i class="icon iconCollect2" onclick="Cancelollect();"></i></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--底部固定评论 end-->
+
+<!--弹出-分享 start-->
+<div class="layer layer1">
+    <ul class="layer-sns">
+        <li>
+            <a href="#"> <i class="icon_friend"></i> <span>朋友圈</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_wechat"></i> <span>微信好友</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_qq"></i> <span>QQ</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_zone"></i> <span>QQ空间</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_weibo"></i> <span>新浪微博</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_tencent"></i> <span>腾讯微博</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<!--弹出-分享 end-->
+
+<!--弹出-字号选择 start-->
+<div class="layer layer2">
+    <ul class="layer-sns layer-font">
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.28rem;">小</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.30rem;">中</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.32rem;">大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.34rem;">超大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.36rem;">巨大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.38rem;">极大</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<!--弹出-字号选择 end-->
+
+<!--弹出-填写评论 start-->
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik">取消</button>
+            写评论
+            <button class="share_btn send" id="send">发送</button>
+        </p>
+        <p><textarea name="" rows="6" id="content"></textarea></p>
+    </div>
+</div>
+<!--弹出-填写评论 end-->
+
+<script>
+    var flag = 1;
+    $(".hide-pl").click(function () {
+        if (flag == 1) {
+            $('.FixedCCon').css('top', '1rem');
+            flag = 0;
+        } else {
+            $('.FixedCCon').css('top', '5.2rem');
+            flag = 1;
+        }
+        $(".show-pl").slideToggle();
+        $(this).toggleClass('icon_arrow_down');
+
+    });
+</script>
+<!-- 照片详情start -->
+    <div class="layer-photo-detail">
+        <div id="focus" class="focus">
+            <div class="hd">
+                <ul></ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li><a href="#"><img src="" id="surePic"/></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 照片详情end -->
+<script src="../../js/photoswipe/klass.min.js"></script>
+<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script type='text/javascript'>      
+function IsPC()  
+{  
+           var userAgentInfo = navigator.userAgent;  
+           var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+           var flag = true;  
+           for (var v = 0; v < Agents.length; v++) {  
+               if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+           }  
+           return flag;  
+}   
+var imageUrl;
+if(IsPC())
+	{
+	
+	imageUrl=$("#videoPath").val();
+	}
+else
+	{
+	imageUrl=$("#mobileHPath").val();
+	}
+	if($("#status").val()==3)
+		{
+			 jwplayer('myplayer').setup({         
+			 file: imageUrl,   
+			 autostart:false,
+			 width: '100%',  
+			 controlbar: 'over',//控制条位置
+			 image: '${(vmVideo.backgroundPath)!}', 
+			 height: '100%'});    
+		}
+</script>  
+    <script>
+        $(function() {
+            $('.introduce').on('click', '.picture span img', function(event) {
+            	//tmpPic当前点击的图片
+            	var tmpPic=event.currentTarget.currentSrc;
+            	$("#surePic").attr("src",tmpPic);
+                var index = layer.open({
+                    type: 1,
+                    title: false,
+                    closeBtn: 0,
+                    shadeClose: true, //点击遮罩关闭层
+                    area: ['90%', '250px'],
+                    content: $('.layer-photo-detail'),
+                    success: function(layero, index) {
+                        TouchSlide({
+                            slideCell: "#focus",
+                            titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                            mainCell: ".bd ul",
+                            autoPlay: false, //自动播放
+                            autoPage: true, //自动分页
+                            endFun: function(i, c) {
+                                $('.save .on').text(i + 1);
+                            }
+                        });
+                        $('.bd img').on('click', function(event) {
+                            layer.close(index);
+                        });
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

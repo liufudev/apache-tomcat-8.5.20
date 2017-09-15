@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>搜索</title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+</head>
+
+<body class="bg_grey">
+
+<!--header start-->
+<header class="header">
+    <div class="Topsearch">
+        <form id="formid" name="myform" method='get' action='../../search/query' onsubmit="location.href='search-result.html'">
+        <input name="q" class="searchinput w80" placeholder="请输入关键字">
+        <a class="btn hide">分类</a>
+        </form>
+    </div>
+    <div class="show">
+        <div class="showcon">
+            <ul>
+                <em><img src="../img/icon_jt.png"/></em>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="main">
+    <div class="searchBox">
+        <div class="historyBox">
+            <ul>
+                <li><span>居住证</span></li>
+                <li><span>赛龙舟</span></li>
+                <li><span>居住证</span></li>
+            </ul>
+            <p  class="clear_all"><i><img src="../img/icon_delete.png"/></i>&nbsp;&nbsp;清空搜索历史</p>
+        </div>
+
+       <!-- <div class="searchBox1">
+            <div class="title2">
+                <h3><img src="../img/icon_sort.png" alt=""/>&nbsp;&nbsp;分类</h3>
+            </div>
+            <ul class="search-list">
+                <li class="cur"><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+                <li><span>一级分类</span></li>
+            </ul>
+        </div>-->
+        <div class="searchBox2 ">
+            <div class="title2">
+                <h3><img src="../img/ico_rq.png" alt=""/>&nbsp;&nbsp;热门搜索</h3>
+            </div>
+            <ul class="search-list">
+                <li><em class="bg001">1</em><span>花生病虫防控</span></li>
+                <li><em class="bg002">2</em><span>花生病虫防控</span></li>
+                <li><em class="bg003">3</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">4</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">5</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">6</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">7</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">8</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">9</em><span>花生病虫防控</span></li>
+                <li><em class="bg004">10</em><span>花生病虫防控</span></li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<!--中间部分 end-->
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="../js/public.js"></script>
+</body>
+</html>

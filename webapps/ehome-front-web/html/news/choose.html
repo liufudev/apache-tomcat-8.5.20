@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>选街道</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+    <style>
+    .myli{
+
+  
+
+    }
+    .myli:hover{
+
+ 
+    }
+    </style>
+    
+</head>
+
+<body class="bg_grey">
+
+<!--顶部搜索 start-->
+<header class="header">
+    <div class="Topsearch">
+            <span class="searchinput"><input placeholder="请输入关键字" id="inputAreaName" value="" type="text"></span>
+            <span class="Menu"><a href="javascript:void(0)" id="cancel_btn" onclick="toIndex()">取消</a></span>
+    </div>
+    <!--分类下拉展开 start-->
+    <div class="show">
+        <div class="showcon">
+            <ul>
+                <i class="icon iconJt"></i>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+                <li><a href="#">一级分类</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--分类下拉展开 end-->
+</header>
+<!--顶部搜索 end-->
+
+<!--中间部分 start-->
+<section class="wrap main" style="bottom: 0.1rem;">
+    <div class="chooseBox" id="MainBox">
+        <div class="location">
+            <span>您的位置：</span>
+            <span class="cur myli" _areaId="${(CurrentArea.areaId)!}" >${(CurrentArea.areaName)!}</span>
+        </div>
+           <div class="location">
+             <span>城市：</span>
+            <span class="cur myli " _areaId="${(AreaList.areaId)!}">${(AreaList.areaName)!}</span>
+
+        </div> 
+     <!--    <div class="location" id="searchresult">
+            <span>搜索结果：</span>
+
+        </div> -->
+       
+          <#list AreaList.childList as area>
+        <div class="area">
+            <h3 class="hide1">${(area.areaName)!}</h3>
+            <ul class="show1" style="display:none">
+<!--             <li class="cur"><span><a href="index.html">天河南街道</a></span></li> -->
+             <#list area.childList as Street>
+                <li><span class="myli" _areaId="${(Street.areaId)!}" >${(Street.areaName)!}</span></li>
+       
+             </#list>
+            </ul>
+        </div>
+        </#list>
+    </div>
+          <div class="historyBox none" id="search_ul">
+            <ul id="search_list">
+                <!-- <li><span>五山街道，天河区</span></li>
+                <li><span>石牌桥街道，天河区</span></li>
+                <li><span>龙洞街道，天河区</span></li>
+                <li><span>五山街道，天河区</span></li>
+                <li><span>石牌桥街道，天河区</span></li>
+                <li><span>龙洞街道，天河区</span></li>
+                <li><span>五山街道，天河区</span></li>
+                <li><span>石牌桥街道，天河区</span></li>
+                <li><span>龙洞街道，天河区</span></li> -->
+
+            </ul>
+            <!--<p class="clear_all"><i class="icon iconDelete"></i>&nbsp;&nbsp;清空搜索历史</p>-->
+        </div>
+</section>
+<!--中间部分 end-->
+<br/>
+<br/>
+<br/>
+<br/>
+
+<script src="${(contextPath)!}/html/news/choose.js"></script>
+</body>
+</html>

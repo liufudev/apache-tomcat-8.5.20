@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>资讯详情</title>
+	<#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+	
+
+<style type="text/css">
+    	.detail p img {		  
+    
+    white-space: normal;
+    vertical-align: text-bottom;
+    max-width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
+		}
+		    	
+#content section {
+     max-width: 100% !important;
+     }
+    </style>
+</head>
+
+<body class='flowlayout'>
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态一：
+        <span class="Location"><a href="choose.html">天河南街道<i class="icon iconArrowBT"></i></a></span>
+        <span class="Menu"><a href="search.html"><i class="icon iconSearchWhite"></i></a></span>
+        <h1 class="logo"><img src="../img/logo/logo.png" alt=""/></h1>
+        -->
+        <!-- 状态二：-->
+        <span class="Back"><a href="#" onclick="toIndex()"><i class="icon iconBackWhite"></i></a></span>
+        <!-- <span class="Menu" id="font"><i class="icon iconFontWhite"></i></span> -->
+
+        <h1>${(areaName)!}</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap">
+    <div class="content">
+
+        <div class="detail">
+        	<input id="infoId" type="hidden" value="${(infoId)!}" />
+        	<input id="type" type="hidden" value="${(type)!}" />
+            <h1 id="infoTitle"></h1>
+
+            <h2><span id="resport"></span><span id="publishTime"></span></h2>
+            <link rel="stylesheet" href="${(contextPath)!}/css/iframe.css?20170714" />
+            <p id="content">
+               
+            </p>
+        </div>
+		<div class="dateTitleBox" id="originLink">
+            
+        </div>
+        <div id="recommShow">
+	        <!--日期标题 start-->
+	        <div class="dateTitleBox">
+	            <p>相关新闻</p>
+	        </div>
+	        <!--日期标题 end-->
+	
+	        <!--无图新闻列表 start-->
+	        <ul class="Box" id="recomm">
+	            
+	        </ul>
+	        <!--无图新闻列表 end-->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</section>
+<!--中间部分 end-->
+
+<!--底部固定评论 start-->
+<section class="enterBox">
+    <div class="enter">
+        <div class="enter-lf">
+            <input placeholder="评论" id="say" class="enterinput">
+        </div>
+        <div class="enter-rg">
+            <ul class="entericon">
+                <li><em id="commentNum"></em><i class="icon iconComment" id="sayList"></i></li>
+                <li id="thumbsupNo"><em id="thumbsupNum"></em><i class="icon iconLike" onclick="SaveThumbsUp();"></i></li>
+                <li id="thumbsupYes" style="display:none;"><em id="thumbsupNum2"></em><i class="icon iconLike2" onclick="deleteThumbsUp();"></i></li>
+                <li id="collectNo"><i class="icon iconCollect" onclick="SaveCollect();"></i></li>
+                <li id="collectYes" style="display:none;"><i class="icon iconCollect2" onclick="Cancelollect();"></i></li>
+                <!-- <li><i class="icon iconShares" id="share"></i></li> -->
+            </ul>
+        </div>
+    </div>
+</section>
+<!--底部固定评论 end-->
+
+<!--弹出-分享 start-->
+<div class="layer layer1">
+    <ul class="layer-sns">
+        <li>
+            <a href="#"> <i class="icon_friend"></i> <span>朋友圈</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_wechat"></i> <span>微信好友</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_qq"></i> <span>QQ</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_zone"></i> <span>QQ空间</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_weibo"></i> <span>新浪微博</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_tencent"></i> <span>腾讯微博</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<!--弹出-分享 end-->
+
+<!--弹出-字号选择 start-->
+<div class="layer layer2">
+    <ul class="layer-sns layer-font">
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.28rem;">小</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.30rem;">中</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.32rem;">大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.34rem;">超大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.36rem;">巨大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.38rem;">极大</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<!--弹出-字号选择 end-->
+
+<!--弹出-填写评论 start-->
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik" onclick="cancleComment();">取消</button>
+            写评论
+            <button class="share_btn send" onclick="comment();" >发送</button>
+        </p>
+        <p><textarea name="" id="text_comment" rows="6"></textarea></p>
+    </div>
+</div>
+<!--弹出-填写评论 end-->
+
+<script src="../../html/news/detail.js"></script>
+<script>
+    function tolayer() {
+        if ($(".layerbg").length > 0) {
+            $(".layerbg").addClass("layerbg-active");
+        } else {
+            $("body").append('<div class="layerbg"></div>');
+            $(".layerbg").addClass("layerbg-active");
+        }
+        $(".layerbg-active,.layer-sns,.share_btn").click(function () {
+            $(".layer").removeClass("am-modal-active");
+            setTimeout(function () {
+                $(".layerbg-active").removeClass("layerbg-active");
+                $(".layerbg").remove();
+            }, 300);
+        })
+    }
+    $(function () {
+        $('#share').on('click', function (event) {
+        	LoginCheck();
+            event.preventDefault();
+            $(".layer1").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#font').on('click', function (event) {
+            event.preventDefault();
+            $(".layer2").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#say').on('click', function (event) {
+        	LoginCheck();
+            event.preventDefault();
+            $(".layer3").addClass("am-modal-active");
+            focus_text_comment();
+            tolayer();
+        });
+        $('#sayList').on('click', function (event) {
+        	setOUrl();
+        	window.location.href="../../html/news/comment-list.html?id="+$('#infoId').val();
+        });
+        
+    })
+    
+    
+    function focus_text_comment(){
+    	$("#text_comment").focus();
+    }
+</script>
+	<script src="${(contextPath)!}/js/qqMusicPlay.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+      http://www.springframework.org/schema/context   
+      http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+      http://www.springframework.org/schema/mvc  
+      http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd" default-lazy-init="true">
+	<!-- 静态页面文件 -->
+	<context:property-placeholder location="classpath*:*.properties" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:default-servlet-handler />
+	<!-- 自定义拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
+			<bean class="com.eshore.ehome.front.annotation.AreaInterceptorAdapter" />
+
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean
+				class="com.eshore.ehome.front.annotation.LoginHandlerInterceptorAdapter" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/api/**" />
+			<bean class="com.eshore.ehome.front.filter.LogInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 自定义拦截器 end -->
+	<context:component-scan base-package="com.eshore">
+	</context:component-scan>
+	<mvc:annotation-driven conversion-service="conversionService"> </mvc:annotation-driven>
+	<mvc:default-servlet-handler />
+	
+<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="com.eshore.ehome.front.custom.ActivityPayBOConverter"/>
+				 <bean class="com.eshore.ehome.front.custom.ActivityEnrollDetailBOConverter"/>
+			</list>
+		</property>
+	</bean> 
+<!-- 	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+			<entry key="com.eshore.ehome.front.custom.User">
+			<bean class="com.eshore.ehome.front.custom.UserEditor"></bean>
+			</entry>
+			</map>
+		</property>
+	</bean>  -->
+	<bean id="logInterceptor" class="com.eshore.ehome.front.filter.LogInterceptor">
+		<property name="apSerClientLogService" ref="apSerClientLogServiceImpl"></property>
+	</bean>
+	<!-- 包装通知，指定切点 -->
+
+
+	<bean class="com.eshore.ehome.front.api.annotation.AutoProxyCreator">
+		<property name="proxyTargetClass" value="true"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>logInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 全局异常处理类 -->
+	<bean class="com.eshore.ehome.front.exception.CustomExceptionResolver">
+	</bean>
+	<!-- 配置freeMarker start -->
+
+	<bean id="freemarkerConfigurer"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPaths">
+			<list>
+				<value>/</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">10</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="number_format">#.##</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"> 
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" /> <property name="defaultEncoding" 
+		value="UTF-8" /> </bean> -->
+
+
+	<!-- FreeMarker视图解析 -->
+	<bean id="freeMarkerViewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="prefix" value="/html/" />
+		<property name="suffix" value=".html" />
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+	</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="10240000" />
+		<!-- 设置在文件上传时允许写到内存中的最大值，以字节为单位计算，默认是10240 -->
+		<!-- 但是经实验，上传文件大小若小于此参数，则不会生成临时文件，故改为2048 -->
+		<property name="maxInMemorySize" value="2048" />
+	</bean>
+	<!-- 配置freeMarker end -->
+
+	<!-- 配置memcached -->
+	<!-- <import resource="memcached-content.xml"/> -->
+	<import resource="redis-context.xml" />
+	<!-- 校验器 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<!-- 校验器 -->
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+		<!-- 指定校验使用的资源文件，如果不指定则默认使用classpath下的ValidationMessages.properties -->
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>
+	<!-- 校验错误信息配置文件 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- 资源文件名 -->
+		<property name="basenames">
+			<list>
+				<value>classpath:CustomValidationMessages</value>
+			</list>
+		</property>
+		<!-- 资源文件编码格式 -->
+		<property name="fileEncodings" value="utf-8" />
+		<!-- 对资源文件内容缓存时间，单位秒 -->
+		<property name="cacheSeconds" value="120" />
+	</bean>
+
+
+</beans>

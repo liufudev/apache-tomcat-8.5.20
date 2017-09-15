@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>直播栏目列表</title>
+	<#include "/html/common/common.html">
+	    <script src="../../js/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../js/layer/layer.js"></script>
+	<link rel="stylesheet" href="../../js/layui/css/layui.css">
+	<script src="../../js/layui/layui.js"></script>
+	<script src="../../js/public.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="zhibo-list.js"></script>
+	<script src="js/moment.min.js"></script>
+		<link rel="stylesheet" href="../../css/layout.css" />
+	
+</head>
+
+<body class="flowlayout">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <h1>直播</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap wrap2">
+    <div class="containerBox">
+
+        <!--直播列表 start-->
+        <div class="zhibo-list" id="live">
+        </div>
+        <!--直播列表 end-->
+
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</section>
+<!--中间部分 end-->
+
+<!--footer start-->
+<#include "../footer.html">
+
+<!--footer end-->
+
+<!--弹出-回顾 start-->
+<div class="layer layer1">
+   <div class="layer-huigu">
+       <h1>直播已结束，您可以点击查看直播回顾报道</h1>
+       <ul id="getReviewList">
+       </ul>
+      <!-- <h1>直播已结束，您可以点击查看直播回顾报道</h1>
+       <ul>
+           <li><a href="#">全方位的新闻视觉，率先把握时局带来的机遇</a></li>
+       </ul>-->
+      <!-- <h1>直播已结束</h1><br>-->
+
+   </div>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<!--弹出-回顾 end-->
+
+
+
+
+
+<script src="../../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="../../js/public.js"></script>
+<script>
+    function tolayer() {
+        if ($(".layerbg").length > 0) {
+            $(".layerbg").addClass("layerbg-active");
+        } else {
+            $("body").append('<div class="layerbg"></div>');
+            $(".layerbg").addClass("layerbg-active");
+        }
+        $(".layerbg-active,.layer-sns,.share_btn").click(function () {
+            $(".layer").removeClass("am-modal-active");
+            setTimeout(function () {
+                $(".layerbg-active").removeClass("layerbg-active");
+                $(".layerbg").remove();
+            }, 300);
+        })
+    }
+    $(function () {
+    	$("#footer_ul_").children('li').eq(1).addClass('cur');
+        $('#share').on('click', function (event) {
+            event.preventDefault();
+            $(".layer1").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#font').on('click', function (event) {
+            event.preventDefault();
+            $(".layer2").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#say').on('click', function (event) {
+            event.preventDefault();
+            $(".layer3").addClass("am-modal-active");
+            tolayer();
+            $('#comment').focus();
+        });
+    })
+</script>
+
+</body>
+</html>

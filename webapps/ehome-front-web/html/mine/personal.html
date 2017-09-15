@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+
+</head>
+
+<body class="bg_grey flowlayout">
+
+<div class="userbg">
+    <!--header start-->
+    <!-- <header class="header header2">
+        <div class="headerCon">
+            状态二：
+            <span class="Back"><a href="#"><i class="icon iconBackWhite"></i></a></span>
+            <span class="Menu" id="font"><i class="icon iconFontWhite"></i></span>
+            <h1>我的</h1>
+        </div>
+    </header> -->
+    <!--header end-->
+
+
+    <!--个人中心头像积分 start-->
+    <div class="personal">
+        <a href="javascript:void(0)" onclick="ShowInformation()">
+            <h3>
+            <span class="pic"><img src="${(user.headUrl)!}" alt=""/></span>
+            <span class="txt">Hi，${(user.nickName)!}</span>
+            </h3>
+        </a>
+    </div>
+    <!--个人中心头像积分 end-->
+
+
+</div>
+
+<!--中间部分 start-->
+<section class="wrap wrap4 wrap5">
+
+
+    <!--我的列表 start-->
+    <div class="personalBox">
+        <ul class="persona-list">
+      <!--       <li>
+               <a href="javascript:void(0)" onclick="ShowMessage()">
+                    <i class="icon001"></i>
+
+                    <p>消息</p>
+                </a>
+            </li> -->
+            <li>
+                <a href="javascript:void(0)" onclick="ShowAttention()">
+                    <i class="icon001"></i>
+
+                    <p>关注</p>
+                </a>
+            </li>
+            <li>
+         <a href="javascript:void(0)" onclick="ShowComment()">
+                    <i class="icon002"></i>
+
+                    <p>评论</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="toActivityCollection()">
+                    <i class="icon003"></i>
+
+                    <p>活动相关</p>
+                </a>
+            </li>
+          <li>
+               <a href="javascript:void(0)" onclick="ModifyPsd()">
+                    <i class="icon004"></i>
+
+                    <p>修改密码</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!--我的列表 end-->
+
+</section>
+<!--中间部分 end-->
+
+
+<!--footer start-->
+<#include "../footer.html">
+	<script>
+		$(function() {
+			$("#footer_ul_").children('li').eq(4).addClass('cur');
+	
+		})
+	</script>
+<!--footer end-->
+
+</body>
+</html>

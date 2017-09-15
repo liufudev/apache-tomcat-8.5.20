@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的活动-活动签到</title>
+   <#include "/html/common/header.html">
+<#include "/html/common/common.html">
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="#"><i class="icon iconBackWhite"></i></a></span>
+        <h1>活动签到</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox">
+        <div class="successBox">
+            <div class="pictureB relative" >
+                <em id="imgmark" class="activity-sign none"></em>
+                <img src="${(activityEnrollVo.activityBaseInfo.activityPicPath)!}" alt=""/>
+                
+            </div>
+            <div class="success">
+                <h3 class="">${(activityEnrollVo.activityBaseInfo.activityName)!}</h3>
+            </div>
+            <ul class="activity-info-list">
+                <li class="bgno">
+                    <i class="icon001"></i>
+                     <p>${(activityEnrollVo.activityBaseInfo.beginTime)?string("yyyy-MM-dd HH:mm:ss")} ~
+                    ${(activityEnrollVo.activityBaseInfo.endTime)?string("HH:mm:ss")}</p>
+                </li>
+                <li>
+                    <i class="icon002"></i>
+                    <p>${(activityEnrollVo.activityBaseInfo.activityLocale)!}</p>
+                </li>
+            </ul>
+        </div>
+        <p class="infotx">订单信息</p>
+        <div class="successBox mt10">
+            <ul class="order-information">
+                <li>
+                    <span class="name">活动码</span>
+                    <span class="fr">${(activityEnrollVo.activityBaseInfo.activityId)!}</span>
+                </li>
+                <li>
+                <span class="name">票种</span>
+                    <span class="fr">
+                     <#if activityEnrollVo.activityPayDetailList?? && (activityEnrollVo.activityPayDetailList?size > 0) >
+                     <#list activityEnrollVo.activityPayDetailList  as activityPayDetail>
+                     ${(activityPayDetail.name)!}（¥${(activityPayDetail.price)!}*${(activityPayDetail.number)!}）
+                     <br>
+                     </#list>
+                     </#if>
+                    
+                    
+                    </span>
+                </li>
+                <li>
+                    <span class="name">费用说明</span>
+                    <span class="fr"></span>
+                    <#if activityEnrollVo.activityCostlist?? && (activityEnrollVo.activityCostlist?size > 0) >
+                    
+                    <#list activityEnrollVo.activityCostlist  as activityCost>
+                    <p> ${(activityCost.costName)!}： ${(activityCost.costDescribe)!}<br>
+                    
+                    
+                    </#list>
+         </#if>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="activity-bottom" id="button_div">
+   <button id="nextbtn" onclick="myPersonal()" class="button-act">返回</button>
+</section>
+<style>
+    .layui-layer {
+        border-radius: .1rem;
+    }
+</style>
+
+</body>
+</html>

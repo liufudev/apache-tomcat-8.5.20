@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>手机号码绑定</title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+  
+</head>
+
+<body>
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="logo"><a href="index.html"><img src="../img/logo.png" alt=""/></a></span>
+
+        <h1 class="logoh1"><strong>手机号码绑定</strong></h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="main">
+    <div class="containerBox">
+        <br/>
+        <br/>
+
+        <div class="loginBox">
+        <form action="${pageContext.request.contextPath}/microwebsite/login/register" method="post">
+            <div class="loginFrom">
+                <label>手机号</label>
+                <input type="text" name="mobile" id="mobile" class="w60 text-change" value="18922186630">
+                <a href="#" onclick="sendCode()">获取验证码</a>
+            </div>
+
+            <div class="loginFrom">
+                <label>验证码</label>
+                <input type="password" id="identifyingCode" name="identifyingCode" class="w80 text-change" value="">
+            </div>
+            </form>
+            <span class="loginTips">验证码不正确，请重新输入</span>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <button class="loginBtn" onclick="Login()">完成</button>
+        </div>
+
+
+    </div>
+</section>
+<!--中间部分 end-->
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="../js/public.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>搜索结果</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script src="../../js/utils.js"></script>
+<script src="../../html/news/search-result.js"></script>
+</head>
+
+<body class="bg_grey">
+
+	<!--顶部搜索 start-->
+	<header class="header">
+		<div class="Topsearch">
+			<a id="test" href="http://www.csdn.net"></a>
+			<form id="formid" name="myform" method='get'>
+				<span class="searchinput"><input placeholder="请输入关键字"
+					onchange="searchData();" value="${(q)!}" id="query" type="text"></span>
+				<span class="Menu"><a href="#" class="hide">分类</a></span>
+			</form>
+		</div>
+		<!--分类下拉展开 start-->
+		<div class="show">
+			<div class="showcon">
+				<ul id="tag">
+					<i class="icon iconJt"></i>
+					<!-- <li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li> -->
+				</ul>
+			</div>
+		</div>
+		<!--分类下拉展开 end-->
+	</header>
+	<!--顶部搜索 end-->
+
+	<!--中间部分 start-->
+	<section class="wrap main">
+		<div class="searchBox">
+			<div class="catalog">
+				<h3>地区</h3>
+				<ul id="area">
+				</ul>
+				<!--  <h4><b>赤岗</b>街道</h4> -->
+			</div>
+			<div class="catalog2">
+				<h3>资讯</h3>
+			</div>
+			<!--无图新闻列表 start-->
+			<ul class="Box" id="info">
+				<!--  <li>
+
+                <a href="detail.html">
+                    <div class="BoxB">
+                        <div class="summary">
+                            <p><span class="cor_red">赤岗</span>近日，为了方便家长尽早了解适龄儿童在番禺区义务教育阶段学校入学的有关政策和信息。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="authorBox">
+                    <div class="hr"></div>
+                    <span class="See"><i class="icon iconSee"></i>32039</span>
+                    <span class="Time"><i class="icon iconTime"></i>01-22 18:00</span>
+                    <span class="Author">作者：<a href="author-list.html">欧阳默默</a></span>
+                </div>
+            </li>
+            <li>
+                <a href="detail.html">
+                    <div class="BoxB">
+                        <div class="summary">
+                            <p>近日，为了方便家长尽早<span class="cor_red">赤岗</span>了解适龄儿童在番禺区义务教育阶段学校入学的有关政策和信息。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="authorBox">
+                    <div class="hr"></div>
+                    <span class="See"><i class="icon iconSee"></i>32039</span>
+                    <span class="Time"><i class="icon iconTime"></i>01-22 18:00</span>
+                    <span class="Author">作者：<a href="author-list.html">欧阳默默</a></span>
+                </div>
+            </li>
+            <li>
+                <a href="detail.html">
+                    <div class="BoxB">
+                        <div class="summary">
+                            <p><span class="cor_red">赤岗</span>近日，为了方便家长尽早了解适龄儿童在番禺区义务教育阶段学校入学的有关政策和信息。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="authorBox">
+                    <div class="hr"></div>
+                    <span class="See"><i class="icon iconSee"></i>32039</span>
+                    <span class="Time"><i class="icon iconTime"></i>01-22 18:00</span>
+                    <span class="Author">作者：<a href="author-list.html">欧阳默默</a></span>
+                </div>
+            </li> -->
+			</ul>
+			<!--无图新闻列表 end-->
+		</div>
+	</section>
+	<!--中间部分 end-->
+	<br />
+	<br />
+	<br />
+	<br />
+
+</body>
+</html>

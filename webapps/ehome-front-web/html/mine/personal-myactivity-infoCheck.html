@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的活动-活动详情（已报名）</title>
+   <#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script>
+
+</script>
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="javascript:void(0)" onclick="callvback()"><i class="icon iconBackWhite"></i></a></span>
+        <h1>活动票券</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox">
+        <div class="successBox">
+              <div class="pictureB relative">
+            <em id="imgmark" class="activity-sign None"></em>
+             
+                <img src="${(activityEnrollVo.activityBaseInfo.activityPicPath)!}" alt=""/>
+                
+            </div>
+            <div class="success">
+                <h3 class="">${(activityEnrollVo.activityBaseInfo.activityName)!}</h3>
+            </div>
+            <ul class="activity-info-list">
+                <li class="bgno">
+                    <i class="icon006"></i>
+                    <p>状态：${(activityEnrollVo.enrollStateName)!}</p>
+                </li>
+                <li class="bgno">
+                    <i class="icon001"></i>
+                    <p>${(activityEnrollVo.activityBaseInfo.beginTime)?string("yyyy-MM-dd HH:mm")} ~
+                    ${(activityEnrollVo.activityBaseInfo.endTime)?string("HH:mm:ss")}</p>
+                </li>
+                <li onclick="loadMap()">
+                    <i class="icon002"></i>
+                    <p>${(activityEnrollVo.activityBaseInfo.activityLocale)!}</p>
+                </li>
+                <li>
+                    <i class="icon004"></i>
+                    <p><a href="tel:${(activityEnrollVo.activityBaseInfo.activityPhone)!}">拨打电话${(activityEnrollVo.activityBaseInfo.activityPhone)!}</a></p>
+                </li>
+            </ul>
+        </div>
+        <p class="infotx">活动费用</p>
+        <div class="successBox mt10">
+            <ul class="order-information">
+                <li>
+                    <span class="name">票种</span>
+                    <span class="fr">
+                      <#if activityEnrollVo.activityPayDetailList?? && (activityEnrollVo.activityPayDetailList?size > 0) >
+                     <#list activityEnrollVo.activityPayDetailList  as activityPayDetail>
+                     ${(activityPayDetail.name)!}（¥${(activityPayDetail.price)!}*${(activityPayDetail.number)!}）
+                     <br>
+                     </#list>
+                     </#if>
+
+                    
+                    
+                    </span>
+                </li>
+                <li>
+                    <span class="name">实付</span>
+                    <span class="fr cor_blue">¥${(activityEnrollVo.enrollCost)!}</span>
+                </li>
+                <li>
+                    <span class="name">订票人昵称</span>
+                    <span class="fr">${(activityEnrollVo.webUserName)!}</span>
+                </li>
+                <li>
+                    <span class="name">订票人账号</span>
+                    <span class="fr">${(activityEnrollVo.webUserPhone)!}</span>
+                </li>
+                <li>
+                    <span class="name">费用说明</span>
+                    <span class="fr"></span>
+                       <#if activityEnrollVo.activityCostlist?? && (activityEnrollVo.activityCostlist?size > 0) >
+                    
+                    <#list activityEnrollVo.activityCostlist  as activityCost>
+                    <p> ${(activityCost.costName)!}： ${(activityCost.costDescribe)!}<br>
+                    
+                    
+                    </#list>
+         </#if>
+         
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<section class="activity-bottom" id="button_div">
+    <!-- <button id="nextbtn" class="button-act">取消报名</button> -->
+</section>
+<input type="hidden" id="enrollId" value="${(activityEnrollVo.enrollId)!}">
+
+<input type="hidden" id="enrollState"  value="${(activityEnrollVo.enrollState)!}">
+<input type="hidden" id="outDate"  value="${(activityEnrollVo.outDate)?string("true","flase")!}">
+<input type="hidden" name="activitySite" id="activitySite" value="${(activityEnrollVo.activityBaseInfo.activitySite)!}">
+<input type="hidden" name="activityLocale" id="activityLocale" value="${(activityEnrollVo.activityBaseInfo.activityLocale)!}">
+<input type="hidden" name="key" id="key">
+<script src="${(contextPath)!}/js/layer_mobile/layer.js"></script>
+<link rel="stylesheet" href="${(contextPath)!}/js/layer_mobile/need/layer.css?new Date()">
+<script src="${(contextPath)!}/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="${(contextPath)!}/js/qrcode/jquery.qrcode.js"></script>
+ <script type="text/javascript" src="${(contextPath)!}/js/qrcode/qrcode.js"></script>
+  <script type="text/javascript" src="${(contextPath)!}/html/mine/personal-myactivity-infoCheck.js?new Date()"></script>
+  <style>
+  .button-act {
+    width: 100%;
+    height: 1rem;
+    display: inline-block;
+    background: #2288ff;
+    color: #fff;
+    font-size: .34rem;
+    float:left;
+}
+  .button-act2 {
+    width: 50%;
+    height: 1rem;
+    display: inline-block;
+    background: #2288ff;
+    color: #fff;
+    font-size: .34rem;
+    float:left;
+}
+  .button-act3 {
+    width: 50%;
+    height: 1rem;
+    display: inline-block;
+    background:#ff3833;
+    color: #fff;
+    font-size: .34rem;
+    float:left;
+}
+  .button-act4 {
+    width: 100%;
+    height: 1rem;
+    display: inline-block;
+    background: #ff3833;
+    color:#fff;
+    font-size: .34rem;
+    float:left;
+}
+
+  </style>
+
+
+</body>
+</html>

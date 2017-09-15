@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-个人信息</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+
+</head>
+
+<body class="bg_grey">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态一：
+        <span class="Location"><a href="choose.html">天河南街道<i class="icon iconArrowBT"></i></a></span>
+        <span class="Menu"><a href="search.html"><i class="icon iconSearchWhite"></i></a></span>
+        <h1 class="logo"><img src="../img/logo/logo.png" alt=""/></h1>
+        -->
+        <!-- 状态二：-->
+        <span class="Back"><a href="#" onclick="myPersonal()"><i class="icon iconBackWhite"></i></a></span>
+        <!--<span class="Menu" id="font"><i class="icon iconFontWhite"></i></span>-->
+        <h1>个人中心</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="personalBox">
+        <ul class="information">
+            <li>
+            <form action="" id="keywordsForm" type="post">
+        <input type="file" id="upload_headurl" style="display:none" name="upfile" accept="image/*" "capture=camera">
+          </form>
+                <label>头像</label>
+
+                <div class="form-txt ">
+                    <i class="pic"><img src="${(user.headUrl)!}" onclick="changeHead()" alt=""/></i>
+                </div>
+            </li>
+            <li>
+                <label>昵称</label>
+
+                <div class="form-txt fr" id="say">
+                    <p>${(user.nickName)!}</p>
+                </div>
+            </li>
+            <li>
+                <label>性别</label>
+
+                <div class="form-txt fr" id="pop-up2">
+                    <p>${(user.sexName)!}</p>
+                </div>
+            </li>
+            <li>
+                <label>手机</label>
+
+                <div class="form-txt fr" id="tel">
+                    <p>${(user.mobile)!}</p>
+                </div>
+            </li>
+        </ul>
+        <br/>
+        <br/>
+
+        <div class="btnBox">
+            <button class="loginBtn" id="pop-up">退出登录</button>
+        </div>
+    </div>
+</section>
+<!--中间部分 end-->
+
+<!-- 弹窗-是否确认退出 start -->
+<div class="window none" id="program">
+    <div class="winCon">
+        <h3>是否确认退出？</h3>
+    </div>
+    <div class="winBtn">
+        <button class="cancelBtn w_two_lf cancle">取消</button>
+        <button class="confirmBtn w_two_rg sure" id="login_out">确认</button>
+    </div>
+</div>
+<!-- 弹窗-是否确认退出 end -->
+
+<!-- 弹窗-性别选择 start -->
+<div class="window none" id="program2">
+    <div class="winCon winCon2">
+        <p class="sure sextag" _sex="1" >男</p>
+
+        <p class="sure sextag" _sex="2" >女</p>
+    </div>
+
+    <div class="winBtn">
+        <button class="w_one cancle">取消</button>
+    </div>
+</div>
+<!-- 弹窗－性别选择 end -->
+
+<!-- 弹窗－昵称填写 start -->
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik">取消</button>
+            昵称
+            <button class="share_btn send" onclick="SavenickName()">保存</button>
+        </p>
+        <p><textarea name="nickName" id="nickName" rows="1"></textarea></p>
+    </div>
+</div>
+<!-- 弹窗－昵称填写 end -->
+
+<!-- 弹窗－手机号填写 start -->
+<div class="layer layer4">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik">取消</button>
+            手机号
+            <button class="share_btn send" onclick="changePhone()">保存</button>
+        </p>
+        <div class="bg_white">
+            <div class="loginFrom">
+                <label>手机号</label>
+                <input type="text" id="mobile"name="mobile" class="w60" value="" placeholder="请输入手机号码">
+             <span class="yzm">
+                        <a href="javascript:void(0)" class="yzm01" id="sencode" onclick="sendCode()">获取验证码</a>
+                      <!--   <a href="javascript:void(0)" class="yzm02 none">60s</a>
+                        <a href="javascript:void(0)" class="yzm01 none">重新获取</a> -->
+              </span>
+            </div>
+            <div class="loginFrom">
+                <label>验证码</label>
+                <input type="text" id="password" name="password" class="w75" placeholder="请输入验证码">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+	<script src="${(contextPath)!}/html/mine/personal-information.js"></script>
+	<script src="${(contextPath)!}/js/jquery-form.js"></script>
+	
+<style>
+    .layui-layer {
+        border-radius: .1rem;
+    }
+</style>
+
+</body>
+</html>

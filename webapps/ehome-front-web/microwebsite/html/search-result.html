@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>搜索结果</title>
+<link rel="stylesheet" href="../microwebsite/css/layout.css" />
+</head>
+
+<body class="bg_grey">
+
+	<!--header start-->
+	<header class="header">
+		<div class="Topsearch">
+			<form id="formid" name="myform" method='get'
+				action='/ehome-front-web/search/query'>
+				<input name="q" class="searchinput w80" id="q" placeholder="请输入关键字">
+				<button type="submit">搜索</button>
+			</form>
+		</div>
+		<div class="show">
+			<div class="showcon">
+				<ul>
+					<em><img src="../img/icon_jt.png" /></em>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+					<li><a href="#">一级分类</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!--header end-->
+
+	<!--中间部分 start-->
+	<section class="main">
+		<div class="searchBox">
+
+			<div class="catalog">
+				<strong>街道</strong>
+			</div>
+
+			<div class="Box">
+				<ul class="Box">
+					<li>
+						<div class="summary">
+							<#list addrResultList as addr>
+							<h3>
+								<span></span>${addr.streetName}</span>
+							</h3>
+							</#list>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="containerBox mt10">
+				<div class="catalog">
+					<strong>资讯</strong>
+				</div>
+
+				<ul class="Box">
+					<#list infoResultList as info>
+						<li>
+						<a href="detail.html">
+							<div class="summary">
+								<h3>
+									${info.infoTitle}
+								</h3>
+								<p>${info.infoContent}</p>
+							</div>
+						</a>
+						<div class="author">
+							<span><a href="author-list.html">作者：张小小</a></span> <span>阅读数：400</span>
+							<span>01-22 18:00</span>
+						</div>
+						</li>
+					</#list>
+					<!--  <li>
+                    <a href="detail.html">
+                        <div class="summary">
+                            <h3><span class="cor_red">天河南</span>出现100元“新型假币”！能骗过验钞机和ATM，当心 | 最全假币识别攻略</h3>
+                            <p>据央视新闻报道，国内近日出现了一种“新型假币”－拼接假币，一张钞票1/4是真币，3/4是假币，迷惑性极大。</p>
+                        </div>
+                    </a>
+                    <div class="author">
+                        <span><a href="author-list.html">作者：张小小</a></span>
+                        <span>阅读数：400</span>
+                        <span>01-22 18:00</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="detail.html">
+                        <div class="summary">
+                            <h3>投你所爱|<span class="cor_red">天河南</span>正声小学第六届艺术文化节，为你所喜欢的节目加油吧！ </h3>
+                            <p>不要吝惜你手中那一票！投起来！</p>
+                        </div>
+                    </a>
+                    <div class="author">
+                        <span><a href="author-list.html">作者：张小小</a></span>
+                        <span>阅读数：400</span>
+                        <span>01-22 18:00</span>
+                    </div>
+                </li> -->
+				</ul>
+			</div>
+		</div>
+
+	</section>
+	<!--中间部分 end-->
+	<br />
+	<br />
+	<br />
+	<br />
+
+
+	<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="../js/TouchSlide/TouchSlide.1.1.js"></script>
+	<script src="../js/public.js"></script>
+</body>
+</html>

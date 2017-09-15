@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>评论列表</title>
+    <#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+    <style>
+		body{padding: 15px;}
+		
+	</style>
+</head>
+
+<body class="flowlayout" >
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="#" onclick="goback()"><i class="icon iconBackWhite"></i></a></span>
+
+        <h1>全部评论</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="containerBox">
+        <!--评论列表 start-->
+       
+        <ul class="talkBox flow-default" id="listcomment">
+            
+        </ul>
+        <!--评论列表 end-->
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</section>
+<!--中间部分 end-->
+
+<!--底部固定评论 start-->
+<section class="enterBox" style="width:95%">
+    <div class="enter">
+        <input placeholder="评论" id="say" class="enterinput">
+    </div>
+</section>
+<!--底部固定评论 end-->
+
+<!--弹出-填写评论 start-->
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik"  onclick="cancleComment();">取消</button>
+            写评论
+            <button class="share_btn send" onclick="comment();">发送</button>
+        </p>
+        <p><textarea name=""  rows="6" id="text_comment"></textarea></p>
+    </div>
+</div>
+<!--弹出-填写评论 end-->
+
+<script src="comment-list.js"></script>
+<script>
+    function tolayer() {
+        if ($(".layerbg").length > 0) {
+            $(".layerbg").addClass("layerbg-active");
+        } else {
+            $("body").append('<div class="layerbg"></div>');
+            $(".layerbg").addClass("layerbg-active");
+        }
+        $(".layerbg-active,.layer-sns,.share_btn").click(function () {
+            $(".layer").removeClass("am-modal-active");
+            setTimeout(function () {
+                $(".layerbg-active").removeClass("layerbg-active");
+                $(".layerbg").remove();
+            }, 300);
+        })
+    }
+    $(function () {
+        $('#share').on('click', function (event) {
+            event.preventDefault();
+            $(".layer1").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#font').on('click', function (event) {
+            event.preventDefault();
+            $(".layer2").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#say').on('click', function (event) {
+        	LoginCheck();
+            event.preventDefault();
+            $(".layer3").addClass("am-modal-active");
+            tolayer();
+        });
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>活动详情-确认报名（报名表单配置）</title>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <style type="text/css">
+    	.name span{color:#FF0000;padding-right: 4px;}
+    	.window p.active{color: #2288ff;}
+    	.question textarea{border:1px solid #ddd;margin-top: .3rem;width:94%;
+    	padding: .15rem;}
+    	#pop-up select{float: right;color: #ccc;}
+    </style>
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="#"><i class="icon iconBackWhite"></i></a></span>
+        <h1>确认报名</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox">
+        <div class="signupBox">
+            <div class="mod-title">请填写报名表单</div>
+            <div class="">
+                <ul class="signup-information">
+                    <li>
+                        <span class="name"><span>*</span>联系人</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入联系人姓名">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>联系电话</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入联系电话">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>微信</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入提示信息">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>QQ</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入提示信息">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>地址</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入提示信息">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>年龄</span>
+                        <div class="form-txt fr">
+                            <input type="text" name="" class="" value="" placeholder="请输入提示信息">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>性别</span>
+                        <div class="form-txt fr" id="pop-up">
+                            <select>
+                            	<option>男</option>
+                            	<option>女</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>自定义1</span>
+                        <div class="form-txt fr" id="pop-up2">
+                            <p>单选1</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>自定义2</span>
+                        <div class="form-txt fr" id="pop-up3">
+                            <p>多选1、多选2、多选3、多选4</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name"><span>*</span>日期选择</span>
+                        <div class="form-txt fr" id="pop-up4">
+                          <p><input id="beginTime" value="2017-07-21" style="color: #ccc;"/></p>
+                        </div>
+                    </li>
+                    <li class="question">
+                        <span>您的密码提示问题是？</span>
+                        <textarea></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<section class="activity-bottom">
+    <button class="button-act">确认报名</button>
+</section>
+<!--底部固定评论 end-->
+<div id="datePlugin"></div>
+<!-- 弹窗-性别选择 start 
+<div class="window none" id="program">
+    <div class="winCon winCon2">
+    	<select>
+    		<option>男</option>
+    	    <option>女</option>
+    	</select>
+    </div>
+    <div class="winBtn">
+        <button class="w_one confirmBtn sure">确定</button>
+    </div>
+</div>-->
+<!-- 弹窗－性别选择 end -->
+
+<!-- 弹窗-自定义单选选择 start -->
+<div class="window none" id="program2">
+    <div class="winCon winCon2">
+        <p>单选1</p>
+        <p>单选2</p>
+        <p>单选3</p>
+    </div>
+    <div class="winBtn">
+        <button class="w_one confirmBtn sure">确定</button>
+    </div>
+</div>
+<!-- 弹窗-自定义单选选择 end -->
+
+<!-- 弹窗-自定义多选选择 start -->
+<div class="window none" id="program3">
+    <div class="winCon winCon2 winCon3" style="height: 8.5rem;overflow: auto;">
+        <p>
+             <em class="check-basic checkboxFive">
+                    <input type="checkbox" value="1" id="checkboxFiveInput" name=""/>
+                    <label for="checkboxFiveInput"></label>
+             </em>
+            多选1
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="2" id="checkboxFiveInput2" name=""/>
+                <label for="checkboxFiveInput2"></label>
+            </em>
+            多选2
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="3" id="checkboxFiveInput3" name=""/>
+                <label for="checkboxFiveInput3"></label>
+            </em>
+            多选3
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="4" id="checkboxFiveInput4" name=""/>
+                <label for="checkboxFiveInput4"></label>
+            </em>
+            多选4
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="5" id="checkboxFiveInput5" name=""/>
+                <label for="checkboxFiveInput5"></label>
+            </em>
+            多选5
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="6" id="checkboxFiveInput6" name=""/>
+                <label for="checkboxFiveInput6"></label>
+            </em>
+            多选6
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="7" id="checkboxFiveInput7" name=""/>
+                <label for="checkboxFiveInput7"></label>
+            </em>
+            多选7
+        </p>
+        <p>
+            <em class="check-basic checkboxFive">
+                <input type="checkbox" value="8" id="checkboxFiveInput8" name=""/>
+                <label for="checkboxFiveInput8"></label>
+            </em>
+            多选8
+        </p>
+    </div>
+    <div class="winBtn">
+        <button class="w_one sure confirmBtn">确定</button>
+    </div>
+</div>
+<!-- 弹窗-自定义多选选择 end -->
+
+<!-- 弹窗-日期选择 start
+<div class="window none" id="program4">
+    <div class="winCon winCon2">
+        <p>2017-01-01</p>
+        <p>2018-02-02</p>
+    </div>
+    <div class="winBtn">
+        <button class="w_one confirmBtn sure">确定</button>
+    </div>
+</div>
+<!-- 弹窗-日期选择 end --> -->
+
+
+
+<script src="../../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../js/public.js"></script>
+<script src="../../js/layer/layer.js"></script>
+<script src="../../js/jquery/date.js"></script>
+<script src="../../js/jquery/iscroll.js"></script>
+<script>
+    var index;
+    $('#pop-up2').on('click', function () {//点击触发
+       var txt="";
+       index = layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['90%'],
+            content: $('#program2')
+        });
+        $("#program2 p").click(function(){
+        	$(this).addClass("active").siblings().removeClass("active");
+        	txt=$(this).text();
+        })
+        $("#program2 .sure").click(function(){
+        	if(txt)
+        	$("#pop-up2").children("p").text(txt);
+        	layer.close(index);
+        })
+    	});
+    	
+ 	    $('#pop-up3').on('click', function () { //点击触发
+            index = layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['90%'],
+            content: $('#program3')
+        });
+        });
+        $("#program3 .sure").click(function(){
+         	var txt="";
+         	$("#program3 input").each(function(){
+         		if($(this).prop("checked"))
+         		txt+=$(this).parents("p").text().trim();
+         	})
+         	if(txt)
+         	$("#pop-up3 p").text(txt);
+        	layer.close(index);
+        })
+
+</script>
+<script >
+$(function(){
+	$('#beginTime').date();
+});
+</script>
+<style>
+    .layui-layer {
+        border-radius: .1rem;
+    }
+</style>
+</body>
+</html>

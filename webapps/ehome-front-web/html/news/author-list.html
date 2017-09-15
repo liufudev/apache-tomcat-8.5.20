@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>作者新闻列表</title>
+    
+    <#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+	<script src="author-list.js"></script>
+</head>
+
+<body class="flowlayout">
+
+<div class="userbg">
+    <!--header start-->
+    <header class="header header2">
+        <div class="headerCon">
+            <span class="Back"><a href="javascript:history.go(-1);"><i class="icon iconBackWhite"></i></a></span>
+
+            <h1>个人主页</h1>
+        </div>
+    </header>
+    <!--header end-->
+
+    <!--作者区域 start-->
+    <div class="userTitBox">
+        <div class="txt">
+            <h2 id="reporterName"></h2>
+            <h3><span>文章数：<em id="articleNumber"></em></span><span>关注：<em id="followerNumber"></em></span></h3>
+        </div>
+    </div>
+    <!--作者区域 end-->
+</div>
+
+<!--中间部分 start-->
+<section class="wrap wrap4 ">
+    <div class="containerBox" id="info">
+    </div>
+</section>
+<!--中间部分 end-->
+</body>
+</html>

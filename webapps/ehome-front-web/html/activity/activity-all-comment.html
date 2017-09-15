@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>活动详情-全部评论</title>
+<!--     <script src="../../js/jquery/jquery-1.11.3.min.js"></script> -->
+	<#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+	<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+	<script src="../../js/public.js"></script>
+    
+    <script src="../../js/common.js"></script>
+    <script src="activity-all-comment.js"></script>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back" id="backSpan"><a href="#"><i class="icon iconBackWhite"></i></a></span>
+        <h1>全部评论</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox">
+        <ul class="talkBox" id="activityCommentList">
+            
+<!--             <li> -->
+<!--                 <div class="pic"> -->
+<!--                     <img src="../../img/default.png" alt=""/> -->
+<!--                 </div> -->
+<!--                 <div class="txt"> -->
+<!--                     <h3><span>1-10 12:20</span>阿狸</h3> -->
+
+<!--                     <p> -->
+<!--                         希望能够看到更加精希望能够看到更加精彩的内容彩的内容。 -->
+<!--                     </p> -->
+<!--                 </div> -->
+<!--             </li> -->
+           
+           
+            
+        </ul>
+    </div>
+</section>
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<section class="enterBox">
+    <div class="enter">
+        <input placeholder="评论" id="say" class="enterinput">
+    </div>
+</section>
+<!--底部固定评论 end-->
+
+<!--弹出-填写评论 start-->
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik" onclick="cancleComment()">取消</button>
+            写评论
+            <button class="share_btn send" onclick="comment()">发送</button>
+        </p>
+        <p><textarea name=""  rows="6" id="text_comment"></textarea></p>
+    </div>
+</div>
+<!--弹出-填写评论 end-->
+
+
+
+</body>
+</html>

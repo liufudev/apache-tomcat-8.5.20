@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>注册</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script src="${(contextPath)!}/html/RegisterOne.js"></script>
+    
+</head>
+
+<body class="flowlayout">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态二： -->
+        <span class="Back"><a href="#" onclick="goback()"><i class="icon iconBackWhite"></i></a></span>
+        <!-- <span class="Menu"><a href="search.html">完成</a></span>-->
+        <h1>注册</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="containerBox">
+
+        <div class="loginBox">
+            <div class="loginCon">
+                <div class="loginFrom">
+                    <label class="lable2">手机码</label>
+                    <input type="text" name="mobile" class="input02" id="mobile" value="" placeholder="请输入手机号码">
+                    <span class="yzm">
+                       <a href="javascript:void(0)" class="yzm01" style="" id="sencode" onclick="sendCode()">获取验证码</a>
+                        <!--<a href="#" class="yzm02 none">60s</a>
+                        <a href="#" class="yzm01 none">重新获取</a>-->
+                    </span>
+                </div>
+                <div class="loginFrom">
+                    <label class="lable2">验证码</label>
+                    <input type="text" name="password" id="password" class="input04" placeholder="请输入验证码">
+                </div>
+
+            </div>
+            <span class="loginTips" id="loginTips">验证码不正确，请重新输入</span>
+            <br/>
+            <br/>
+
+            <button class="loginBtn" onclick="Login()">下一步</button>
+        </div>
+    </div>
+</section>
+<!--中间部分 end-->
+
+
+</body>
+</html>

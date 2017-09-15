@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>详情</title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+</head>
+
+<body>
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="logo"><a href="index.html"><img src="../img/logo.png" alt=""/></a></span>
+        <span class="iconSearch" id="font"><a href="#"><i><img src="../img/icon_font2.png" alt=""/></i></a></span>
+
+        <h1 class="logoh1"><strong>天园街道</strong></h1>
+    </div>
+</header>
+<!--header end-->
+<!--中间部分 start-->
+<section>
+    <div class="content">
+        <div class="detail">
+      
+            <h1>${(info.infoTitle)!}</h1>
+
+            <div class="author">
+                <span>作者：${(info.infoReporter)!}</span>
+                <span>阅读数：${(info.infoReadCount)!}</span>
+            </div>
+            <p class="pic">
+                <a href="#"><img src="${(info.infoCover)!}"/></a>
+            </p>
+
+            <p class="pic_tit">${(info.summary)!}</p>
+
+            <p class="de_blk">
+                <span class="blue">${(info.summary)!}</span>
+${(info.infoContent)!}            </p>
+        </div>
+        <div class="position">
+            <div class="posbox">
+                <p class="tiit">${(info.infoTitle)!}</p>
+
+                <p class="address">地址：广州市天河区中山大道190号骏景花园南苑</p>
+            </div>
+            <div class="contd">
+                <h1>幼儿园简介</h1>
+
+                <p>${(info.infoContent)!}</p>
+
+                <p class="tel">咨询电话：<span>38778887</span><span>黄老师</span></p>
+            </div>
+        </div>
+        <div class="time">
+            <p>相关新闻</p>
+        </div>
+        <ul id="listnew" class="Box BoxH">
+            <li>
+                <div class="BoxH-lf">
+                    <div class="summary">
+                        <h3><a href="detail.html">扎克伯格遭Facebook股东逼宫 被要求卸任董事长</a></h3>
+                        <h4>
+                            <span>作者：张小小</span>
+                            <span>01-22 18:00</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="BoxH-rg">
+                    <div class="picture">
+                        <img src="../img/pic/pic1.jpg" alt=""/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="BoxH-lf">
+                    <div class="summary">
+                        <h3><a href="detail.html">扎克伯格遭Facebook股东逼宫 被要求卸任董事长</a></h3>
+                        <h4>
+                            <span>作者：张小小</span>
+                            <span>01-22 18:00</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="BoxH-rg">
+                    <div class="picture">
+                        <img src="../img/pic/pic1.jpg" alt=""/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="BoxH-lf">
+                    <div class="summary">
+                        <h3><a href="detail.html">扎克伯格遭Facebook股东逼宫 被要求卸任董事长</a></h3>
+                        <h4>
+                            <span>作者：张小小</span>
+                            <span>01-22 18:00</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="BoxH-rg">
+                    <div class="picture">
+                        <img src="../img/pic/pic1.jpg" alt=""/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="BoxH-lf">
+                    <div class="summary">
+                        <h3><a href="detail.html">扎克伯格遭Facebook股东逼宫 被要求卸任董事长</a></h3>
+                        <h4>
+                            <span>作者：张小小</span>
+                            <span>01-22 18:00</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="BoxH-rg">
+                    <div class="picture">
+                        <img src="../img/pic/pic1.jpg" alt=""/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="BoxH-lf">
+                    <div class="summary">
+                        <h3><a href="detail.html">扎克伯格遭Facebook股东逼宫 被要求卸任董事长</a></h3>
+                        <h4>
+                            <span>作者：张小小</span>
+                            <span>01-22 18:00</span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="BoxH-rg">
+                    <div class="picture">
+                        <img src="../img/pic/pic1.jpg" alt=""/>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</section>
+<!--中间部分 end-->
+<br/>
+<br/>
+<br/>
+<br/>
+<section class="enter enter1">
+    <span class="icon" id="share"><img src="../img/icon_share2.png" alt=""></span>
+    <span class="icon"><img src="../img/icon_save2.png" alt="" onclick="SaveCollect()"></span>
+    <span class="icon"><img src="../img/icon_good2.png" alt="" onclick="SaveThumbsUp()"><i class="red">${(ThumbsUpCount)!}</i></span>
+    <a href="javascript:void(0);"  onclick="showInfoComnetlsit()"><span class="icon"><img src="../img/icon_say2.png" alt=""><i class="red">${(CommentCount)!}</i></span></a>
+    <button class="btn" id="say">评论</button>
+</section>
+
+<div class="layer layer1">
+    <ul class="layer-sns">
+        <li>
+            <a href="#"> <i class="icon_friend"></i> <span>朋友圈</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_wechat"></i> <span>微信好友</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_qq"></i> <span>QQ</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_zone"></i> <span>QQ空间</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_weibo"></i> <span>新浪微博</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_tencent"></i> <span>腾讯微博</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<div class="layer layer2">
+    <ul class="layer-sns layer-font">
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.28rem;">小</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.30rem;">中</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.32rem;">大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.34rem;">超大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.36rem;">巨大</span> </a>
+        </li>
+        <li>
+            <a href="#"> <i class="icon_font"></i> <span style="font-size: 0.38rem;">极大</span> </a>
+        </li>
+    </ul>
+    <div class="layer-footer">
+        <button class="share_btn">取消</button>
+    </div>
+</div>
+<div class="layer layer3">
+    <div class="say_blk">
+        <p class="tit">
+            <button class="share_btn quik">取消</button>
+            写评论
+            <button class="share_btn send" onclick="comment()">发送</button>
+        </p>
+        <p><textarea name="" id="text_comment" rows="6"></textarea></p>
+    </div>
+</div>
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="../js/public.js"></script>
+<script type="text/javascript">
+    function tolayer() {
+        if ($(".layerbg").length > 0) {
+            $(".layerbg").addClass("layerbg-active");
+        } else {
+            $("body").append('<div class="layerbg"></div>');
+            $(".layerbg").addClass("layerbg-active");
+        }
+        $(".layerbg-active,.layer-sns,.share_btn").click(function () {
+            $(".layer").removeClass("am-modal-active");
+            setTimeout(function () {
+                $(".layerbg-active").removeClass("layerbg-active");
+                $(".layerbg").remove();
+            }, 300);
+        })
+    }
+    $(function () {
+        $('#share').on('click', function (event) {
+            event.preventDefault();
+            $(".layer1").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#font').on('click', function (event) {
+            event.preventDefault();
+            $(".layer2").addClass("am-modal-active");
+            tolayer();
+        });
+        $('#say').on('click', function (event) {
+        	if(!LoginCheck()){
+        		
+        		return ;
+        	};
+            event.preventDefault();
+            $(".layer3").addClass("am-modal-active");
+            tolayer();
+        });
+    })
+</script>
+<script src="../../microwebsite/html/jquery-form.js"></script>
+<script src="../../microwebsite/html/login.js"></script>
+<script src="../../microwebsite/html/detail.js"></script>
+
+</body>
+</html>

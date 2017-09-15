@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="khala-jplan">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
+	name="viewport" id="viewport" />
+<meta name="renderer" content="webkit">
+<title>khala-jplan</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/uplan1.1.1.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/uskin1.1.1.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style1.1.1.min.css">
+<script src="${pageContext.request.contextPath}/js/require2.1.11.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main1.1.1.js"></script>
+    
+<script src="${pageContext.request.contextPath}/app.js"></script>
+
+</head>
+
+<body>
+	<div class="u_layout u_layout_sidebar_max u_layout_nav">
+		<!-- 侧栏 -->
+		<div class="u_sidebar" id='u_sidebar'></div>
+		<!-- 头部 -->
+		<nav id="nav" class="up-navbar up-navbar-inverse" role="navigation">
+			<div class="up-navbar-header">
+				<button type="button" class="up-navbar-toggle"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="up-navbar-brand" href="javascript:void(0);"><img
+					src="images/logo.png" alt=""><strong>UPLAN</strong></a>
+			</div>
+			<div class="up-collapse up-navbar-collapse" id="navbar-collapse">
+				<ul class="up-nav up-navbar-nav up-pull-right">
+					<li class="up-dropdown"><a href="javascript:void(0);"
+						class="up-dropdown-toggle" data-toggle="dropdown"> 用户 <b
+							class="up-caret"></b>
+					</a>
+						<ul class="up-dropdown-menu">
+							<li class="up-divider"></li>
+							<li><a id="logout" href="javascript:void(0);">退出</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 内容 -->
+		<div class='u_wrapper'>
+			<iframe src="blank.html" id="iframe" frameborder="0" width="100%" height="100%"></iframe>
+		</div>
+		<!-- 蒙版 -->
+		<div id="u_masking"></div>
+	</div>
+	<!-- 模态框 -->
+</body>
+</html>

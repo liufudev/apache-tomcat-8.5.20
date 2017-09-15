@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的活动</title>
+  <#include "/html/common/header.html">
+<#include "/html/common/common.html">
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="#" onclick="callvback()"><i class="icon iconBackWhite"></i></a></span>
+        <h1>
+            <ul class="activityTab">
+                <li class="cur"><a href="#">我的活动</a></li>
+                <li><a href="#">关注的活动</a></li>
+            </ul>
+        </h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox activityBlock">
+        <div class="mact">
+            <!--小图新闻列表 start-->
+            <ul class="Box" id="listcomment">
+              
+            </ul>
+            <!--小图新闻列表 end-->
+        </div>
+        <div class="mact none">
+            <!--小图新闻列表 start-->
+            <ul class="Box" id="listcomment1">
+               
+            </ul>
+            <!--小图新闻列表 end-->
+        </div>
+    </div>
+</section>
+<!--中间布局 end-->
+
+<script src="${(contextPath)!}/html/mine/personal-myactivity.js"></script>
+
+
+</body>
+</html>

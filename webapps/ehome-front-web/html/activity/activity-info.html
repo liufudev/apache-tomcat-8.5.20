@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>活动详情</title>
+
+	<#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+
+	<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+	<script src="../../js/public.js"></script>
+    
+    <script src="../../js/common.js"></script>
+    <script src="activity-info.js"></script>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+    <style type="text/css">
+    .infobox img {		  
+    
+    white-space: normal;
+    vertical-align: text-bottom;
+    max-width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
+		}
+		    	
+     #activityDetail section {
+     max-width: 100% !important;
+     }
+    </style>
+    </style>
+</head>
+
+<body class="bg_grey flowlayout">
+<input type="hidden" name="activitySite" id="activitySite">
+<input type="hidden" name="activityLocale" id="activityLocale">
+<input type="hidden" name="key" id="key">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="activity.html"><i class="icon iconBackWhite"></i></a></span>
+        <h1>
+        	<input id="activityId" type="text" value="" hidden="true">
+            <ul class="activityTab">
+<!--                 <li class="cur" id="liActivity" onclick="loadActivityDetail(activityId)"><a href="#"><i class="icon iconLocation"></i>活动</a></li> -->
+<!--                 <li id="liComment" onclick="loadActivityDetailComment(activityId)"><a href="#">评论</a></li> -->
+                <li id="liActivity" onclick=""><a href="javascript:void(0);"><!--<i class="icon iconLocation"></i>-->活动</a></li>
+                <li id="liComment" onclick=""><a href="javascript:void(0);">评论</a></li>
+            </ul>
+        </h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap">
+    <div class="containerBox activityBlock">
+<!--     	<div class="mact" id="divDetail"> -->
+        <div id="divDetail">
+            <div class="activity-info">
+                <div class="pictureB" id="activityPicPath">
+<!--                     <img src="../../img/pic/at2.jpg" alt=""/> -->
+                </div>
+                <div class="acttit">
+                    <h3><span id="activityName"></span></h3>
+                    <h4>浏览 <span id="sightNumber"></span>次 |收藏 <span id="collectNumber"></span>次</h4>
+                </div>
+                <ul class="activity-info-list">
+                    <li class="bgno">
+                        <i class="icon001"></i>
+                        <p>
+                        <span id="beginTime"></span>~<span id="endTime"></span>
+                        </p>
+                    </li>
+                    <li onclick="loadMap()">
+                        <i class="icon002"></i>
+                        <p>
+                        <span id="activityLocaleShow"></span>
+                        </p>
+                    </li>
+                    <li>
+                        <i class="icon003"></i>
+                        <p class="cor_blue">
+                        <span id="costNumber"></span>
+                        </p>
+                    </li>
+                    <li>
+                        <i class="icon004"></i>
+                        <p>
+                        <span id="activityPhone"></span>
+                        </p>
+                    </li>
+                    <li class="bgno">
+                        <i class="icon005"></i>
+                        <p>
+                        <span id="activityNumber"></span>人
+                        <span class="cor_blue">
+                        	（已报名<span id="enrollNumber"></span>人）
+                        </span></p>
+                    </li>
+                </ul>
+                <p class="infotx">详情</p>
+<!--                 <div class="pictureB"> -->
+<!--                     <img src="../../img/pic/at3.jpg" alt=""/> -->
+<!--                 </div> -->
+                <div class="infobox" id="activityDetail">
+                  
+                    
+                </div>
+            </div>
+        </div>
+<!--         <div class="mact none" id="divComment"> -->
+        <div id="divComment">
+            <div class="activity-comment">
+                <h3 class="activity-comment-tit"><span id="totalCommentNum">评论（）</span></h3>
+                <ul class="talkBox" id="ulComment">
+<!--                     <li> -->
+<!--                         <div class="pic"> -->
+<!--                             <img src="../../img/pic/pic003.jpg" alt=""/> -->
+<!--                         </div> -->
+<!--                         <div class="txt"> -->
+<!--                             <h3><span>1-10 12:20</span>阿狸</h3> -->
+
+<!--                             <p> -->
+<!--                                 新闻内容很有趣。 -->
+<!--                             </p> -->
+<!--                         </div> -->
+<!--                     </li> -->
+                    
+                </ul>
+                <a href="javascript:void(0)" class="act-more" id="ulCommentAll" onclick="">查看全部评论</a>
+            </div>
+            <div class="activity-comment mt10">
+                <h3 class="activity-comment-tit"><span id="totalConsultNum">问题（）</span></h3>
+                <ul class="talkBox" id="ulConsult">
+<!--                     <li> -->
+<!--                         <div class="pic" id="headUrlConsult"> -->
+<!--                             <img src="../../img/pic/pic003.jpg" alt=""/> -->
+<!--                         </div> -->
+<!--                         <div class="txt"> -->
+<!--                             <h3><span id="consultDate">1-10 12:20</span><span id="nickNameConsult"></span>阿狸</h3> -->
+<!--                             <p> -->
+<!--                                 <i class="icon icon_ask" id="consultContent"></i> -->
+<!--                                 活动中有奖品吗？ -->
+<!--                             </p> -->
+<!--                             <p> -->
+<!--                                 <i class="icon icon_answer" id="replyContent"></i> -->
+<!--                                 抱歉，没有奖品哦 -->
+<!--                             </p> -->
+<!--                         </div> -->
+<!--                     </li> -->
+
+                </ul>
+                    <a href="javascript:void(0)" class="act-more" id="ulConsultAll" onclick="">查看全部咨询 </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<section class="activity-bottom">
+    <div class="activity-bottom-lf" id="divCollect">
+        <div class="actcollect">
+            <a href="#" id="collectTag">
+                <i class="icon icon_weibo"></i>
+                <p>收藏</p>
+            </a>
+        </div>
+    </div>
+    <div class="activity-bottom-lf" id="divCancelCollect">
+        <div class="actcollect">
+            <a href="#" id="cancelCollectTag">
+                <i class="icon icon_weibo"></i>
+                <p>取消收藏</p>
+            </a>
+        </div>
+    </div>
+    <div class="activity-bottom-rg" id="divEnroll">
+        <button class="button-act" onclick="signUp()">立即报名</button>
+    </div>
+    <div class="activity-bottom-rg" id="divCancelEnroll">
+         <button class="button-act" onclick="toEnrollDetail()">报名详情</button><!--详情页面有取消报名 -->
+    </div>
+    <div class="activity-bottom-rg" id="divAlreadyStart" hidden="true">
+        <button class="button-act" onclick="">已开始</button>
+    </div>
+    <div class="activity-bottom-rg" id="divAlreadyEnd" hidden="true">
+        <button class="button-act">已结束</button>
+    </div>
+</section>
+<!--底部固定评论 end-->
+
+
+</body>
+</html>

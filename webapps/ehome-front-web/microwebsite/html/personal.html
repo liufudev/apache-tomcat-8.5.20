@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+</head>
+
+<body class="bg_grey">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="logo"><a href="index.html"><img src="../img/logo.png" alt=""/></a></span>
+
+        <h1 class=""><strong>个人中心</strong></h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="main">
+    <div class="personalBox">
+        <div class="personal">
+            <a href="#" onclick="ShowInformation()">
+                <div class="pic">
+                    <img src="${(user.headUrl)!}" alt=""/>
+                </div>
+                <div class="txt">
+                    <h3>${(user.nickName)!}</h3>
+                    <h5>
+                        <span>积分：${(account.integralNow)!}</span>
+                    </h5>
+                </div>
+            </a>
+        </div>
+
+
+        <ul class="persona-list">
+            <li>
+                <a href="#" onclick="ShowMessage()">
+                    <i class="icon001"></i>
+
+                    <p>我的消息</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon002"></i>
+
+                    <p>我的活动</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="ShowAttention()">
+                    <i class="icon003"></i>
+
+                    <p>我的关注</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="ShowComment()">
+                    <i class="icon004"></i>
+
+                    <p>我的评论</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="ShowIntegral()">
+                    <i class="icon005"></i>
+
+                    <p>我的积分</p>
+                </a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</section>
+<!--中间部分 end-->
+<br/>
+<br/>
+<br/>
+<br/>
+<!--footer start-->
+<footer class="footer">
+    <ul>
+        <li>
+            <a href="index.html">
+                <img src="../img/icon_footer01a.png" alt=""/>
+
+                <p>资讯</p>
+            </a>
+        </li>
+        <li>
+            <img src="../img/icon_footer02a.png" alt=""/>
+
+            <p>活动</p>
+        </li>
+        <li>
+            <img src="../img/icon_footer03a.png" alt=""/>
+
+            <p>服务</p>
+        </li>
+        <li class="cur">
+            <a href="personal.html">
+                <img src="../img/icon_footer04b.png" alt=""/>
+
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</footer>
+<!--footer end-->
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="../js/public.js"></script>
+<script src="../../microwebsite/html/login.js"></script>
+<script>
+    $(function () {
+        $('.focus li').hide();
+        $('.focus li').first().show();
+        $('.focus li').last().find('img').load(function () {
+            TouchSlide({
+                slideCell: "#slideBox",
+                titCell: ".dot ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                mainCell: ".focus ul",
+                effect: "leftLoop",
+                autoPage: true, //自动分页
+                autoPlay: true //自动播放
+            });
+            $('.focus li').show();
+        });
+    })
+</script>
+</body>
+</html>

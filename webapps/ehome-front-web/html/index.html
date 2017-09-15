@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>首页</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script src="${(contextPath)!}/html/index.js"></script>
+</head>
+
+<body class="bg_grey flowlayout">
+<input id="urlllll" type="hidden" name="urlllll">
+	<!--header start-->
+	<header class="header">
+		<div class="headerCon">
+			<!-- 状态一：-->
+			  <span class="Location"><a href="javascript:void(0)" onclick="tochoose()"><em id="areaName"></em><i class="icon iconArrowBT"></i></a></span>
+			<span class="Menu"><a href="html/news/search.html"><i class="icon iconSearchWhite"></i></a></span>
+
+			<h1 class="logo">
+				<img src="${(contextPath)!}/img/logo/logo.png" alt="" />
+			</h1>
+		</div>
+	</header>
+	<!--header end-->
+
+	<section class="wrap">
+		<!--轮播图 start-->
+		<div class="slideBox" id="slideBox">
+			<div class="focus">
+				<ul id="loop">
+				</ul>
+			</div>
+			<div class="dot">
+				<ul></ul>
+			</div>
+		</div>
+		<!--轮播图 end-->
+
+		<!--中间部分 start-->
+		<div class="main">
+			<div class="containerBox" id="info">
+				<!--日期标题 start-->
+			<!-- 	<div class="dateTitleBox">
+					<p>12月21日</p>
+				</div> -->
+				<!--日期标题 end-->
+			</div>
+		</div>
+	</section>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<div style="height: 100px">
+</div>
+
+	<#include "footer.html">
+	<!--footer end-->
+	<script>
+		$(function() { 
+			$("#footer_ul_").children('li').eq(0).addClass('cur');
+			
+			$('.focus li').hide();
+			$('.focus li').first().show();
+			$('.focus li').last().find('img').load(function() {
+				TouchSlide({
+					slideCell : "#slideBox",
+					titCell : ".dot ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell : ".focus ul",
+					effect : "leftLoop",
+					autoPage : true, //自动分页
+					autoPlay : true
+				//自动播放
+				});
+				$('.focus li').show();
+			});
+		})
+	</script>
+	<style>
+.slideBox .dot {
+	bottom: .06rem;
+}
+</style>
+
+</body>
+</html>

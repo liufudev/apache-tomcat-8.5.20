@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>登录</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+	<script src="${(contextPath)!}/html/login.js"></script>
+
+</head>
+
+<body class="flowlayout">
+
+<!--中间部分 start-->
+<section class="main">
+    <div class="containerBox">
+        <div class="loginBoxLogo">
+            <img src="../img/logo/logo2.png" class="pic"/>
+        </div>
+        <div class="loginBox">
+            <div class="loginCon">
+                <div class="loginFrom">
+                    <label>手机号</label>
+                    <input type="text" name="mobile" id="mobile" class="input01" value="" placeholder="请输入手机号码">
+                    <!-- <span class="yzm">
+                        <a href="#" class="yzm01">获取验证码</a>
+                        <a href="#" class="yzm02 none">60s</a>
+                        <a href="#" class="yzm01 none">重新获取</a>
+                    </span>-->
+                </div>
+                <div class="loginFrom loginFrom3">
+                    <label>密码</label>
+                    <input type="password" name="password" id="password" class="input01" placeholder="请输入密码">
+                    <i class="icon iconSee2"></i>
+                </div>
+            </div>
+            <span class="loginTips" id="loginTips">密码不正确，请重新输入</span>
+
+            <br/>
+
+            <button class="loginBtn" onclick="Login()">登录</button>
+            <div class="reg">
+                <a href="javascript:void(0)" class="fl" onclick="toRegister()">快速注册</a>
+                <a href="javascript:void(0)" class="fr" onclick="toReSetPsd()">忘记密码？</a>
+            </div>
+        </div>
+
+        <div class="login_other">
+            <h3><span>其他登录方式</span></h3>
+            <ul>
+                <li><img src="../img/icon/icon_weibo.png" alt="" onclick="toWeiboLogin()"/></li>
+                <li><img src="../img/icon/icon_qq.png" alt="" onclick="toQQboLogin()"/></li>
+                <li><img src="../img/icon/icon_weCha.png"  onclick="toWeiXinOpenLogin()"  alt=""/></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!--中间部分 end-->
+
+
+</body>
+</html>

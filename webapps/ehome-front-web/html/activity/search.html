@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>搜索</title>
+	<#include "/html/common/header.html">
+	<#include "/html/common/common.html">
+    <script src="../../js/moment.min.js"></script>
+	<script src="search.js"></script>
+</head>
+
+<body class="bg_grey">
+
+<!--顶部搜索 start-->
+<header class="header">
+    <div class="Topsearch">
+            <span class="searchinput"><input placeholder="请输入关键字" value="" type="text" id="qValue" onfocus="" onchange="query()"></span>
+            <span class="Menu"><a href="#" class="hide">分类</a></span>
+    </div>
+    <!--分类下拉展开 start-->
+    <div class="show">
+        <div class="showcon">
+            <ul id="tag">
+            </ul>
+        </div>
+    </div>
+    <!--分类下拉展开 end-->
+</header>
+<!--顶部搜索 end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="searchBox">
+        <div class="historyBox" id="historyAll">
+        </div>
+<!--         <div class="searchBox2 " id="hotKey1"> -->
+<!--             <div class="searchtitle"> -->
+<!--                 <h3>热门搜索</h3> -->
+<!--             </div> -->
+<!--             <ul class="search-list" id="hotKey"> -->
+<!--             </ul> -->
+<!--         </div> -->
+    </div>
+</section>
+<!--中间部分 end-->
+
+</body>
+</html>

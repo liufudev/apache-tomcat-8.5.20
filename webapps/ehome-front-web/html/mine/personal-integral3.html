@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-等级介绍</title>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+</head>
+
+<body class="bg_grey flowlayout">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!--<span class="logo"><a href="index.html"><img src="../img/logo.png" alt=""/></a></span>-->
+
+        <h1 class=""><strong>等级介绍</strong></h1>
+
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap">
+    <div class="personalBox">
+        <div class="integralBox">
+            <div class="integralC">
+                <table>
+                    <tr>
+                        <th width="30%" class="txt_center">等级头衔</th>
+                        <th width="30%" class="txt_center">等级</th>
+                        <th width="30%" class="txt_center">所需积分</th>
+                    </tr>
+                    <tr>
+                        <td>头衔1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>头衔2</td>
+                        <td>2</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>头衔3</td>
+                        <td>3</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>头衔4</td>
+                        <td>4</td>
+                        <td>300</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+<!--中间部分 end-->
+<br/>
+<br/>
+<br/>
+<br/>
+<!--footer start-->
+<!--<footer class="footer">
+    <ul>
+        <li>
+            <img src="../img/icon_footer01a.png" alt=""/>
+
+            <p>资讯</p>
+        </li>
+        <li>
+            <img src="../img/icon_footer02a.png" alt=""/>
+
+            <p>活动</p>
+        </li>
+        <li>
+            <img src="../img/icon_footer03a.png" alt=""/>
+
+            <p>服务</p>
+        </li>
+        <li class="cur">
+            <img src="../img/icon_footer04b.png" alt=""/>
+
+            <p>我的</p>
+        </li>
+    </ul>
+</footer>-->
+<!--footer end-->
+<!--
+<div class="message-bottom">
+    <div class="check-basic checkboxFive fl">
+        <input type="checkbox" value="0" id="checkboxFiveInput0" name=""/>
+        <label for="checkboxFiveInput0"></label>
+    </div>
+    <span><a href="#" class="quanxuan">全选</a></span>
+    <span><a href="#" class="shanchu">删除</a></span>
+</div>
+-->
+
+<!-- 弹窗-发现新版本 window start -->
+<div class="window none" id="program">
+    <div class="winCon">
+        <h3>是否确认退出？</h3>
+    </div>
+    <!--状态一：短按钮-->
+    <div class="winBtn">
+        <button class="cancelBtn w_two_lf sure">取消</button>
+        <button class="confirmBtn w_two_rg sure">确认</button>
+    </div>
+</div>
+<!-- 弹窗-发现新版本 window end -->
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script>
+    //弹出一个iframe层
+    $('#pop-up').on('click', function () { //点击触发
+        //layer.ready(function () { //自动弹
+        index = layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['90%'],
+            content: $('#program')
+        });
+    });
+    // 确定
+    $('.sure').on("click", function () {
+                layer.close(index);
+            }
+    );
+</script>
+<style>
+    .layui-layer {
+        border-radius: .1rem;
+    }
+</style>
+</body>
+</html>

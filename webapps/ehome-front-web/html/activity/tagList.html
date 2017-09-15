@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>资讯栏目列表</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+<script src="../../js/TouchSlide/TouchSlide.1.1.js"></script>
+<script src="tagList.js"></script>
+<script src="../../js/moment.min.js"></script>
+</head>
+
+<body>
+	<!--header start-->
+	<header class="header">
+		<div class="headerCon">
+			<!-- 状态二：-->
+			<span class="Back"><a href="#" onclick="goback()"><i
+					class="icon iconBackWhite"></i></a></span>
+			<h1 id="title"></h1>
+		</div>
+	</header>
+	<!--header end-->
+
+	<!--中间部分 start-->
+	<section class="wrap main">
+		<div class="containerBox">
+			<!--小图活动列表 start-->
+			<ul class="Box" id="info">
+			</ul>
+			<!--小图活动列表 end-->
+		</div>
+	</section>
+	<!--中间部分 end-->
+</body>
+</html>

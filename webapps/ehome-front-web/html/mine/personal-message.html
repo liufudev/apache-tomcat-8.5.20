@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的消息</title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+</head>
+
+<body class="bg_grey flowlayout">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态二：-->
+        <span class="Back"><a href="javascript:void(0)" onclick="myPersonal()"><i class="icon iconBackWhite"></i></a></span>
+        <span class="Menu edit">编辑</span>
+        <!--<span class="Menu">完成</span>-->
+        <h1>我的消息</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="personalBox editCon">
+        <!--我的消息列表 start-->
+
+        <!--只读状态 start-->
+        <ul class="message">
+            <li>
+                <a href="personal-message-info.html">
+                    <div class="">
+
+                        <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                        <p>
+                            本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                            系统消息正文，默认最多显示两
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="personal-message-info.html">
+                    <div class="">
+
+                        <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                        <p>
+                            本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                            系统消息正文，默认最多显示两
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="personal-message-info.html">
+                    <div class="">
+
+                        <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                        <p>
+                            本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                            系统消息正文，默认最多显示两
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!--只读状态 end-->
+
+        <!--编辑状态 start-->
+        <ul class="message none">
+            <li>
+                <div class="message-lf">
+                    <div class="check-basic checkboxFive">
+                        <input type="checkbox" value="1" id="checkbox1" name="num"/>
+                        <label for="checkbox1"></label>
+                    </div>
+                </div>
+
+                <div class="message-rg">
+                    <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                    <p>
+                        本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                        系统消息正文，默认最多显示两
+                    </p>
+                </div>
+
+            </li>
+            <li>
+                <div class="message-lf">
+                    <div class="check-basic checkboxFive">
+                        <input type="checkbox" value="1" id="checkbox2" name="num"/>
+                        <label for="checkbox2"></label>
+                    </div>
+                </div>
+
+                <div class="message-rg">
+                    <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                    <p>
+                        本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                        系统消息正文，默认最多显示两
+                    </p>
+                </div>
+
+            </li>
+            <li>
+                <div class="message-lf">
+                    <div class="check-basic checkboxFive">
+                        <input type="checkbox" value="1" id="checkbox3" name="num"/>
+                        <label for="checkbox3"></label>
+                    </div>
+                </div>
+
+                <div class="message-rg">
+                    <h3><span>01-22 18:00</span>系统消息标题</h3>
+
+                    <p>
+                        本周末民办幼儿园报名，你最需要的招生攻略拿走不谢我的消息
+                        系统消息正文，默认最多显示两
+                    </p>
+                </div>
+
+            </li>
+        </ul>
+        <!--编辑状态 end-->
+
+        <!--我的消息列表 end-->
+    </div>
+
+</section>
+<!--中间部分 end-->
+
+<!--编辑状态操作底部 start-->
+<div class="message-bottom none">
+    <div class="check-basic checkboxFive fl">
+        <input type="checkbox" value="0" id="checkbox0" name="num"
+               onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }"/>
+        <label for="checkbox0"></label>
+    </div>
+    <span><a href="#" class="quanxuan">&nbsp;&nbsp;全选</a></span>
+    <span><a href="#" class="shanchu" id="pop-up">删除</a></span>
+</div>
+<!--编辑状态操作底部 end-->
+
+<!-- 弹窗-是否确认删除 start -->
+<div class="window none" id="program">
+    <div class="winCon">
+        <h3>是否确认删除？</h3>
+    </div>
+    <div class="winBtn">
+        <button class="cancelBtn w_two_lf cancle">取消</button>
+        <button class="confirmBtn w_two_rg sure">确认</button>
+    </div>
+</div>
+<!-- 弹窗-是否确认删除 end -->
+
+<script src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    //弹出一个iframe层
+    $('#pop-up').on('click', function () { //点击触发
+        //layer.ready(function () { //自动弹
+        index = layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['90%'],
+            content: $('#program')
+        });
+    });
+    // 确定
+    $('.sure').on("click", function () {
+                layer.close(index);
+            }
+    );
+</script>
+<style>
+    .layui-layer {
+        border-radius: .1rem;
+    }
+</style>
+<script>
+    //全选
+    function checkAll(name) {
+        var el = document.getElementsByTagName('input');
+        var len = el.length;
+        for (var i = 0; i < len; i++) {
+            if ((el[i].type == "checkbox") && (el[i].name == name)) {
+                el[i].checked = true;
+            }
+        }
+    }
+    function clearAll(name) {
+        var el = document.getElementsByTagName('input');
+        var len = el.length;
+        for (var i = 0; i < len; i++) {
+            if ((el[i].type == "checkbox") && (el[i].name == name)) {
+                el[i].checked = false;
+            }
+        }
+    };
+    //点击编辑状态
+    $('.edit').on('click', function (event) {
+        $(".editCon ul,.message-bottom").toggle();
+    });
+</script>
+
+</body>
+</html>

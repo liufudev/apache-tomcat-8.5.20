@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的活动-取消报名进度</title>
+   <#include "/html/common/header.html">
+<#include "/html/common/common.html">
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="javascript:void(0)" onclick="callvback()"><i class="icon iconBackWhite"></i></a></span>
+        <h1>取消报名进度</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap wrap2">
+    <div class="containerBox">
+        <div class="cancelBox">
+            <ul class="cancel-mes">
+            
+             <#if activityEnrollVo.currentActivityLog?? && (activityEnrollVo.currentActivityLog?size > 0) >
+             <#list activityEnrollVo.currentActivityLog  as ActivityLog>
+               <li>
+                    <h3><span class="cor_blue">${(ActivityLog.operateName)!}</span>${(ActivityLog.gmtCreate)?string("yyyy-MM-dd HH:mm:ss")}</h3>
+                    <p>
+                        ${(ActivityLog.operateDescrip)!}
+                    </p>
+                </li>
+             </#list>
+             </#if>
+              
+           <!--      <li>
+                    <h3><span class="">审核通过</span>2017-06-07 12:00:00</h3>
+                </li>
+                <li>
+                    <h3><span>已退款</span>2017-06-07 12:00:00</h3>
+                    <p>
+                        退款金额：¥20<br>
+                        退款渠道：微信<br>
+                        交易号：73497379<br>
+                    </p>
+                </li> -->
+            </ul>
+        </div>
+        <div class="cancel-btn" id="button_div">
+          
+        </div>
+
+    </div>
+</section>
+<!--中间布局 end-->
+
+<!--底部固定评论 start-->
+<!--<section class="activity-bottom">
+    <button class="button-act">取消报名</button>
+</section>-->
+<!--底部固定评论 end-->
+<input type="hidden" id="enrollState"  value="${(activityEnrollVo.enrollState)!}">
+<input type="hidden" id="enrollId" value="${(activityEnrollVo.enrollId)!}">
+
+  <script type="text/javascript" src="${(contextPath)!}/html/mine/personal-myactivity-cancel-a.js"></script>
+
+</body>
+</html>

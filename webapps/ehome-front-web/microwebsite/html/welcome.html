@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>微社区e家通</title>
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body class="bg_grey">
+    <!--中间部分 start-->
+    <section class="welcome">
+        <p id="count" >跳过 (3s)</p>
+    </section>
+    <!--中间部分 end-->
+    <script src="../js/jquery/jquery-1.11.3.min.js"></script>
+   <script type="text/javascript">
+    $(function() {
+        count();
+        $('#count').on('click', function(event) {
+            location.href = 'index.html';
+        });
+    });
+    function count() {
+        var count = 3;
+        var countdown = setInterval(CountDown, 1000);
+
+        function CountDown() {
+             count--;
+            $("#count").text("跳过 (" + count + "s)");
+            if (count == 0) {
+                $("#count").hide();
+                location.href = 'index.html';
+                clearInterval(countdown);
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心-我的活动-取消报名</title>
+   <#include "/html/common/header.html">
+<#include "/html/common/common.html">
+</head>
+
+<body class="bg_grey flowlayout">
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <span class="Back"><a href="javascript:void(0)" onclick="callvback()"><i class="icon iconBackWhite"></i></a></span>
+        <h1>取消报名</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间布局 start-->
+<section class="wrap wrap2">
+    <div class="containerBox">
+        <div class="cancelBox">
+            <div class="cancel-tx">
+                <p>
+			                    取消报名后将无法恢复,您确定不参加活动吗？已付费项目,
+			                    需审核是否满足退款要求,审核通过允许退款,退款将收取***
+			                    手续费,详情见退款说明。
+                </p>
+                <a href="#">请查看《退款说明》</a>
+            </div>
+            <div class="cancel-cho">
+                <span class="lab">取消原因：</span>
+                <span>
+                    <select id="reason">
+                        <option>时间冲突，无法参与活动</option>
+                        <option>懒癌症发作</option>
+                        <option>上天</option>
+                    </select>
+                </span>
+            </div>
+            <div class="cancel-tea">
+                <h3>备注：</h3>
+                <textarea id="remark" name="remark" class=""></textarea>
+            </div>
+        </div>
+<div class="cancel-btn">
+    <button class="loginBtn" onclick="CancelComit()">提交</button>
+</div>
+
+    </div>
+</section>
+<input type="hidden" id="enrollId" value="${(activityEnrollVo.enrollId)!}">
+
+<script src="${(contextPath)!}/html/mine/personal-myactivity-cancel.js"></script>
+</body>
+</html>

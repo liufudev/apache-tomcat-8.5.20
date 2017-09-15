@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>注册</title>
+<#include "/html/common/header.html">
+<#include "/html/common/common.html">
+    <script src="${(contextPath)!}/html/RegisterTwo.js"></script>
+</head>
+
+<body class="flowlayout">
+
+<!--header start-->
+<header class="header">
+    <div class="headerCon">
+        <!-- 状态二： -->
+        <span class="Back"><a href="#"  onclick="goback()"><i class="icon iconBackWhite"></i></a></span>
+        <!-- <span class="Menu"><a href="search.html">完成</a></span>-->
+        <h1>完成注册</h1>
+    </div>
+</header>
+<!--header end-->
+
+<!--中间部分 start-->
+<section class="wrap main">
+    <div class="containerBox">
+
+        <div class="loginBox">
+            <div class="loginCon">
+
+                <div class="loginFrom loginFrom3">
+                    <label class="lable2">设置新密码</label>
+                    <input type="password" name="password"  id="password"class="input02" placeholder="请输入密码">
+                </div>
+                <div class="loginFrom loginFrom3">
+                    <label class="lable2">确认新密码</label>
+                    <input type="password" name="repassword" id="repassword" class="input02" placeholder="请确认密码">
+                </div>
+
+            </div>
+           <span class="loginTips" id="loginTips">验证码不正确，请重新输入</span>
+            <br/>
+
+            <button class="loginBtn" onclick="Login()">完成注册</button>
+        </div>
+    </div>
+</section>
+<!--中间部分 end-->
+
+
+</body>
+</html>
